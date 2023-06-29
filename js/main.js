@@ -24,7 +24,7 @@ let inputUser;
 let inputPassword;
 
 // LOOP PARA CONTROL DE USUARIO
-let loopUser= setInterval(controllerUsers, 3000);
+//let loopUser= setInterval(controllerUsers, 3000);
 
 let btnEndSesion= document.getElementById("btn-cerrarSesion");
 
@@ -40,8 +40,7 @@ let nav_inicioSesion=document.getElementById("nav-inicioSesion");
 let btnIniciarSesion= document.getElementById("btn-sesion");
 btnIniciarSesion.addEventListener('click', function(e){
     hiddenAll();    
-    nav_inicioSesion.style.display="initial";
-    
+    nav_inicioSesion.style.display="initial";   
     
     loginUsuario();
 
@@ -102,12 +101,14 @@ function loginUsuario(){
         case "user":
           
           userActual=users_type[1];
+          
           break;
         case "admin":
           console.log(userActual)
           userActual= users_type[2];
           break;
       }
+      controllerUsers();
     }
   }
 }
