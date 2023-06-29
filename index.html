@@ -57,16 +57,16 @@
         <div class="navegador" id="nav-inicioSesion">
             <img src="images/logoEscuela.png" alt="">
             <h1>Iniciar sesión</h1>
-            <div class="form input-group">
+            <form class="form input-group" id="formsesion">
 
                 <input type="text" class="input" name="usuario" id="usuario" required="" autocomplete="off">
                 <label for="usuario" class="user-label">Usuario</label>
 
                 <input type="password" class="input" name="password" id="password" required="" autocomplete="off">
                 <label for="password" class="password-label">Contraseña</label>
-            </div>
+            </form>
             <button id="recuPassword">Olvidé mi contraseña</button>
-            <button type="submit" id="ingresar">INGRESAR</button>
+            <button type="button" id="ingresar" onclick="obtenerDatosForm()">INGRESAR</button>
         </div>
 
         <button id="btn-sesion">Iniciar sesión</button>
