@@ -1,31 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
-    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito+Sans" />
     <title>ESS N°16</title>
 </head>
+
 <body>
-    <nav>
-        <img src="images/logoEscuela.png" alt="">
-        <h1>EES N°16</h1>
+    <div class="flexColumnMarginleft" id="btnFlotante">
+        <button id="menu" class="menu-desplegado" type="button"></button>
+    </div>
 
-        <ul id="option-menu">
-            <li>Home</li>
-            <li>Historia</li>
-            <li>Orientaciones</li>
-            <li>Equipo Directivo</li>
-            <li>Contacto</li>
-        </ul>
+    <header>
+        <div class="busqueda"> 
+            <input type="text" id="filtro" onkeyup="" placeholder="Buscar">
+            <img class="lupa" src="images/lupa.png" alt="">
+         </div>
+    </header>
 
-        <button>Iniciar Sesión</button>
-    </nav>
-    <div id="container">
+    <div class="container-main flexColumnCentrado" id="container-main">
+
+        <nav class="navegador flexColumnCentrado" id="nav">
+
+            <div class="navegador flexColumnCentrado" id="nav-public">
+                <div class="flexColumnCentrado">
+                    <img class="logos" src="images/logoEscuela.png" alt="">
+
+                    <h1>EES N°16</h1>
+
+                </div>
+                <ul id="option-menu" class="flexColumnCentrado">
+                    <li>Home</li>
+                    <li>Historia</li>
+                    <li>Orientaciones</li>
+                    <li>Equipo Directivo</li>
+                    <li>Contacto</li>
+                </ul>
+
+            </div>
+
+            <div class="navegador" id="nav-user">
+                <div class="flexColumnCentrado">
+                    <div class="image-user"></div>
+                    <img class="iconos" src="images/cambio.png" alt="">
+                    <h1 id="name-user"></h1>
+                    <h2 id="cargo-user"></h2>
+
+                </div>
+
+                <ul id="option-menu" class="flexColumnCentrado">
+                    <li>Mis noticias</li>
+                    <li>Crear noticia</li>
+                </ul>
+            </div>
+            <div class="navegador" id="nav-admin">
+                <div class="flexColumnCentrado">
+                    <div class="image-user"></div>
+                    <img class="iconos" src="images/cambio.png" alt="">
+                    <h1>Administrador</h1>
+                </div>
+
+
+                <ul id="option-menu" class="flexColumnCentrado">
+                    <li>Mis noticias</li>
+                    <li>Crear noticia</li>
+                    <li>Docentes</li>
+                    <li>Equipo Directivo</li>
+                    <li>Contacto</li>
+                </ul>
+            </div>
+            <div class="navegador" id="nav-inicioSesion">
+                <div class="flexColumnCentrado">
+                    <img class="logos" src="images/logoEscuela.png" alt="">
+                    <h1>Iniciar sesión</h1>
+                </div>
+
+                <form class="form input-group" id="formsesion">
+                    <label for="usuario" class="user-label">Usuario</label>
+                    <input type="text" class="input" name="usuario" id="usuario" required="" autocomplete="off">
+                    
+                    <label for="password" class="password-label">Contraseña</label>
+                    <input type="password" class="input" name="password" id="password" required="" autocomplete="off">
+                    
+                </form>
+                <div class="flexColumnCentrado">
+                    <button id="recuPassword" class="subrayado">Olvidé mi contraseña</button>
+                    <button type="button" class="botonVisual" id="ingresar" onclick="obtenerDatosForm()">INGRESAR</button>
+                </div>
+
+            </div>
+
+            <button id="btn-sesion" class="subrayado">Iniciar sesión</button>
+            <button id="btn-cerrarSesion"class="iconos" ></button>
+        </nav>
+
+    </div>
+
+    <div class="contenedor-noticia">
+        <div class="noticia">
+            <img class="imagen-noticia"src="images/noticiaMA.jpg" alt="">
+            <div>
+                <h2 class="titulo-noticia">Día del Medio Ambiente</h2>
+                <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
+                <p id="texto-noticia"> En el Dia Mundial del Medio Ambiente con los estudiantes de 2do2da , 
+                trabajamos y hablamos sobre el Reciclado ...</p>
+                <button id="btn-verMas">Ver más</button>
+
+            </div>
+        </div>
+        <div class="noticia">
+            <img class="imagen-noticia"src="images/noticiaPS.jpg" alt="">
+            <div>
+                <h2 class="titulo-noticia">Proyecto Solidario</h2>
+                <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
+                <p id="texto-noticia"> En el marco del Proyecto Solidario que están trabajando los alumnos de 4°1° 
+                con el profesor Garay Hernan de ....</p>
+                 <button id="btn-verMas">Ver más</button>
+            </div>
+        </div>
+        <div class="noticia">
+            <img class="imagen-noticia"src="images/NoticiaB.png"alt="">
+            <div>
+                <h2 class="titulo-noticia">Día del Bombero</h2>
+                <p id="fechaPublicacion">Fecha de publicación: 02/06/2023 - EES Nº 16</p>
+                <p id="texto-noticia"> Colocamos globos en las puertas y ventanas de nuestra escuela, 
+                 para homenajear a nuestros Bomberos. Feliz día que ...</p>
+                <button id="btn-verMas">Ver más</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-secondary" id="container-secondary">
+
 
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>

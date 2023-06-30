@@ -1,52 +1,249 @@
-
-body{
+body {
     width: 100%;
     height: 100vh;
     margin: 0px;
     font-family: 'Nunito';
-    background: linear-gradient(to top left, rgb(5,42,86), rgb(99,127,161), rgb(213,230,252));;
+    background: linear-gradient(to top left, rgb(5, 42, 86), rgb(99, 127, 161), rgb(213, 230, 252));
+    display: flex;
+    flex-direction: row;
+
 }
-nav{
+
+.container-main,
+.container-secondary {
+    height: 100%;
+}
+
+.container-main {
+    width: 30%;
+    color: white;
+    background-color: rgb(5, 42, 86);
+}
+
+#container-secondary {
+    width: 70%;
+}
+
+.flexColumnCentrado {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(5,42,86);
+}
+
+.flexColumnMarginleft {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+div button#menu {
+
+    
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+.menu-desplegado{
+    background: url('../images/menuB.png');
+    background-size: cover;
+}
+.menu-oculto{
+    background: url('../images/menuA.png');
+    background-size: cover;
+}
+
+
+
+nav#navegador,
+div#navegador {
+
+    background-color: rgb(5, 42, 86);
     color: white;
-    width: 370px;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
-h1{
-    font-family: 'Poppins';
+
+#nav-admin,
+#nav-user,
+#nav-inicioSesion {
+
+    display: none;
+}
+
+h1 {
+    font-family: 'Nunito Sans';
     font-weight: bold;
+    text-align: center;
 }
-nav img{
+
+img.logos {
+    padding: 5px;
     width: 283px;
     height: 222px;
 }
-#option-menu{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+img.iconos {
+    padding: 5px;
+    width: 20px;
+    height: auto;
+}
+
+.image-user {
+    width: 150px;
+    height: 150px;
+    background: url("../images/usuario.png");
+    background-size: cover;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+#option-menu {
     list-style: none;
     padding: 0;
     margin: 0;
-    
-}
-#option-menu li{
-    width: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: 0;
-  
+   
 
 }
-#option-menu li:hover{
-    border-bottom: 5px solid rgb(9,85,175);
+
+#option-menu li {
+    width: auto;
+    padding-top: 15px;
+    margin: 0;
+    
+
 }
-nav button {
+
+#option-menu li,
+button {
+    cursor: pointer;
+}
+
+#option-menu li:hover {
+    border-bottom: 3px solid rgb(9, 85, 175);
+}
+
+
+
+button.subrayado, #btn-verMas {
     font-family: 'Nunito';
     text-decoration: underline;
-    color:white;
+    color: white;
     border: none;
     background: none;
+
+
+}
+
+button.botonVisual {
+    width: 80%;
+    border: none;
+    padding: 1%;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(109, 165, 233);
+}
+
+#btn-cerrarSesion {
+    display: none;
+    background: url('../images/cerrar-sesion.png');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+button#btn-sesion,
+button#btn-cerrarSesion {
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+.input-group {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    color: rgba(156, 163, 175, 1);
+    margin-bottom: 4px;
+}
+
+.input-group input {
+    width: 80%;
+    border-radius: 0.375rem;
+    border: none;
+    outline: 0;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    color: black;
+}
+
+.input-group input:focus {
+    border-color: rgba(167, 139, 250);
+}
+
+
+.backgroundEscuelaImg {
+    background: url("../images/escuela.jpeg");
+    background-size: cover;
+    opacity: .5;
+}
+.desaparecer{
+    display: none;
+}
+#btnFlotante{
+    position:absolute;
+}
+
+
+.lupa, #filtro{
+    width: 25px;
+    height: 25px;
+    position: fixed;
+    top: 3%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 5px;
+}
+
+#filtro{
+    border-radius: 5px;
+    width: 85px;
+    height: 25px;
+    margin-right: 35px;
+}
+.titulo-noticia{
+  color:  rgb(5, 42, 86);
+  margin-bottom: 1rem;
+ 
+
+}
+.contenedor-noticia{
+    top: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1erm;
+    text-align: center;
+    margin-top: 10px;
+  
+}
+
+.imagen-noticia{
+    width: 125px;
+    height: 125px;
+    border-radius: 5px;
+   
+}
+
+#fechaPublicacion{
+    color:  rgb(5, 42, 86);
+}
+.detalle-noticia{
+    
 }
