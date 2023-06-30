@@ -1,6 +1,6 @@
 body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0px;
     font-family: 'Nunito';
     background: linear-gradient(to top left, rgb(5, 42, 86), rgb(99, 127, 161), rgb(213, 230, 252));
@@ -9,15 +9,12 @@ body {
 
 }
 
-.container-main,
-.container-secondary {
-    height: 100%;
-}
 
 .container-main {
     width: 30%;
     color: white;
     background-color: rgb(5, 42, 86);
+    background-size: cover;
 }
 
 #container-secondary {
@@ -39,17 +36,19 @@ body {
 
 div button#menu {
 
-    
+
     margin: 5px;
     width: 30px;
     height: 30px;
     border: none;
 }
-.menu-desplegado{
+
+.menu-desplegado {
     background: url('../images/menuB.png');
     background-size: cover;
 }
-.menu-oculto{
+
+.menu-oculto {
     background: url('../images/menuA.png');
     background-size: cover;
 }
@@ -192,9 +191,57 @@ button#btn-cerrarSesion {
     background-size: cover;
     opacity: .5;
 }
-.desaparecer{
+
+.desaparecer {
     display: none;
 }
-#btnFlotante{
-    position:absolute;
+
+#btnFlotante {
+    position: absolute;
+}
+
+.lupa,
+#filtro {
+    width: 25px;
+    height: 25px;
+    position: fixed;
+    top: 3%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 5px;
+}
+
+#filtro {
+    border-radius: 5px;
+    width: 85px;
+    height: 25px;
+    margin-right: 35px;
+}
+
+.titulo-noticia {
+    color: rgb(5, 42, 86);
+    margin-bottom: 1rem;
+
+
+}
+
+.contenedor-noticia {
+    top: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1erm;
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+.imagen-noticia {
+    width: 125px;
+    height: 125px;
+    border-radius: 5px;
+
+}
+
+#fechaPublicacion {
+    color: rgb(5, 42, 86);
 }
