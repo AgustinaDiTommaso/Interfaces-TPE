@@ -127,7 +127,13 @@ button {
 }
 
 
-
+.btn-verMas{
+    font-family: 'Nunito';
+    text-decoration: underline;
+    color: black;
+    border: none;
+    background: none;
+}
 button.subrayado {
     font-family: 'Nunito';
     text-decoration: underline;
@@ -137,6 +143,7 @@ button.subrayado {
 
 
 }
+
 
 button.botonVisual {
     width: 80%;
@@ -244,6 +251,8 @@ button#btn-cerrarSesion {
     width: 150px;
     height: 150px;
     border-radius: 5px;
+
+    margin: 10px;
 
 }
 
