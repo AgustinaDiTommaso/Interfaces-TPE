@@ -2,6 +2,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0px;
+    padding: 0;
     font-family: 'Nunito';
     background: linear-gradient(to top left, rgb(5, 42, 86), rgb(99, 127, 161), rgb(213, 230, 252));
     display: flex;
@@ -32,6 +33,7 @@ body {
     flex-direction: column;
     align-items: start;
     width: 100%;
+    
 }
 
 div button#menu {
@@ -117,7 +119,7 @@ button {
     cursor: pointer;
 }
 
-#option-menu li:hover {
+#option-menu li:hover, .noticia  {
     border-bottom: 3px solid rgb(9, 85, 175);
 }
 
@@ -236,12 +238,25 @@ button#btn-cerrarSesion {
 }
 
 .imagen-noticia {
-    width: 125px;
-    height: 125px;
+    width: 150px;
+    height: 150px;
     border-radius: 5px;
 
 }
 
 #fechaPublicacion {
     color: rgb(5, 42, 86);
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.margenleft{
+    margin-left: 15%;
+}
+.margentop{
+    margin-top: 10%;
 }
