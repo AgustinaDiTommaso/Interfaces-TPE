@@ -10,7 +10,7 @@
     <title>ESS N°16</title>
 </head>
 
-<body>
+<body onload="main()">
     <div class="flexColumnMarginleft" id="btnFlotante">
         <button id="menu" class="menu-desplegado" type="button"></button>
     </div>
@@ -38,9 +38,10 @@
 
             </div>
 
-            <div class="navegador" id="nav-user">
+            <div class="navegador flexColumnCentrado" id="nav-user">
                 <div class="flexColumnCentrado">
-                    <div class="image-user"></div>
+                    <div class="image-user">                        
+                    </div>
                     <img class="iconos" src="images/cambio.png" alt="">
                     <h1 id="name-user"></h1>
                     <h2 id="cargo-user"></h2>
@@ -52,7 +53,7 @@
                     <li>Crear noticia</li>
                 </ul>
             </div>
-            <div class="navegador" id="nav-admin">
+            <div class="navegador flexColumnCentrado" id="nav-admin">
                 <div class="flexColumnCentrado">
                     <div class="image-user"></div>
                     <img class="iconos" src="images/cambio.png" alt="">
@@ -104,13 +105,14 @@
 
 
     <div class="container-secondary" id="container-secondary">
-        <header>
+        
+        <div id="noticias-View" class="noticiaI-View  margenleft margentop">
+            <header>
             <div class="busqueda">
                 <input type="text" id="filtro" onkeyup="" placeholder="Buscar">
                 <img class="lupa" src="images/lupa.png" alt="">
             </div>
         </header>
-        <div class="noticiaI-View  margenleft margentop">
             <div id="1" class="noticia flexRow" >
                 <div class="flexColumnMarginleft">
                     <h2 class="titulo-noticia">Día del Medio Ambiente</h2>
@@ -154,7 +156,7 @@
                 </div>
             </div>
         </div>
-        
+
 
 
     </div>

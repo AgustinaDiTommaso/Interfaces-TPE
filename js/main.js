@@ -34,9 +34,10 @@ let nav_admin=document.getElementById("nav-admin");
 let nav_inicioSesion=document.getElementById("nav-inicioSesion");
 
 let container_main= document.getElementById("container-main");
-let container_secondary= document.getElementById("container-secondary")
+let container_secondary= document.getElementById("container-secondary");
 
 let noticia= document.getElementById("noticia")
+let noticias_view= document.getElementById("noticias-View");
 
 //BOTONES
 let btnIniciarSesion= document.getElementById("btn-sesion");
@@ -51,11 +52,12 @@ let btn_verMas= document.querySelectorAll("btn-verMas");
 
 btnIniciarSesion.addEventListener('click', function(e){
     hiddenAll();    
-    nav_inicioSesion.style.display="initial";   
+    nav_inicioSesion.classList.remove("desaparecer");  
     container_secondary.classList.add("backgroundEscuelaImg");
     loginUsuario();
 
 })
+
 btnMenu.addEventListener('click', function(e){
   container_main.classList.toggle("desaparecer");
 
@@ -70,25 +72,32 @@ for(let i=0; i<btn_verMas.length;i++){
   })
 }
 
-
-// FUNCION DE QUE CONTROLA SESION DE USUARIO
+function main(){
+  hiddenAll();
+  controllerUsers();
+}
+// FUNCION QUE CONTROLA SESION DE USUARIO y LA VISTA
 function controllerUsers(){
   
   if(userActual==users_type[2]){
     console.log("El usuario logueado es un admin");
     hiddenAll();
-    nav_admin.style.display="initial";
-    btnEndSesion.style.display="initial";
+    nav_admin.classList.remove("desaparecer");
+    noticias_view.classList.remove("desaparecer");
+    btnEndSesion.classList.remove("desaparecer");
   }
   else if(userActual==users_type[1]){
     console.log("El usuario logueado es un usuario común");
     hiddenAll();
-    nav_user.style.display="initial";
-    btnEndSesion.style.display="initial";
+    nav_user.classList.remove("desaparecer");
+    noticias_view.classList.remove("desaparecer");
+    btnEndSesion.classList.remove("desaparecer");
   }else{
     hiddenAll();
-    nav_public.style.display="initial";
-    btnIniciarSesion.style.display="initial";
+    nav_public.classList.remove("desaparecer");
+    nav_public.classList.remove("desaparecer");
+    noticias_view.classList.remove("desaparecer");
+    btnIniciarSesion.classList.remove("desaparecer");
   }
   
   
@@ -119,7 +128,7 @@ function loginUsuario(){
     //Si encontró el usuario
     if(usuarioEncontrado!=null){
       
-      container_secondary.classList.remove("backgroundEscuelaImg");
+      
       console.log("encontre el usuario en el arreglo json"+ usuarioEncontrado.tipo)
       //Almacena el tipo de usuario en la variable global userActual
       switch(usuarioEncontrado.tipo){
@@ -133,26 +142,29 @@ function loginUsuario(){
           userActual= users_type[2];
           break;
       }
+      container_secondary.classList.remove("backgroundEscuelaImg");
       controllerUsers();
     }
   }
 }
+/*
 function mostrarNoticia(i){
   let noticias= document.getElementById("contenedor-noticias");
   noticias.style.display="none";
   
 
-}
+}*/
+
 //OCULTA TODOS LOS DISPLAY
 function hiddenAll(){
-  nav_public.style.display="none";  
-  nav_user.style.display="none" ;
-  nav_admin.style.display="none";
-  nav_inicioSesion.style.display="none";
-  container_secondary
+  nav_public.classList.add("desaparecer") ;
+  nav_user.classList.add("desaparecer") ;
+  nav_admin.classList.add("desaparecer") ;
+  nav_inicioSesion.classList.add("desaparecer") ;
+  noticias_view.classList.add("desaparecer") ;
 
-  btnEndSesion.style.display="none";
-  btnIniciarSesion.style.display="none";
+  btnEndSesion.classList.add("desaparecer") ;
+  btnIniciarSesion.classList.add("desaparecer") ;
 }
 
 
