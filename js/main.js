@@ -36,10 +36,13 @@ let nav_inicioSesion=document.getElementById("nav-inicioSesion");
 let container_main= document.getElementById("container-main");
 let container_secondary= document.getElementById("container-secondary")
 
+let noticia= document.getElementById("noticia")
+
 //BOTONES
 let btnIniciarSesion= document.getElementById("btn-sesion");
 let btnEndSesion= document.getElementById("btn-cerrarSesion");
 let btnMenu= document.getElementById("menu");
+let btn_verMas= document.querySelectorAll("btn-verMas");
 
 
 //CONTROL DE VISTAS
@@ -58,11 +61,17 @@ btnMenu.addEventListener('click', function(e){
 
   btnMenu.classList.toggle("menu-oculto")  ;
   btnMenu.classList.toggle("menu-desplegado");
+  container_secondary.classList.toggle("widht70");
+  container_secondary.classList.toggle("widht100");
 })
+for(let i=0; i<btn_verMas.length;i++){
+  btn_verMas[i].addEventListener("click",function(e){
+    mostrarNoticia(i);
+  })
+}
 
 
-
-// FUNCION DE LOOP QUE CONTROLA SESION DE USUARIO
+// FUNCION DE QUE CONTROLA SESION DE USUARIO
 function controllerUsers(){
   
   if(userActual==users_type[2]){
@@ -128,7 +137,12 @@ function loginUsuario(){
     }
   }
 }
+function mostrarNoticia(i){
+  let noticias= document.getElementById("contenedor-noticias");
+  noticias.style.display="none";
+  
 
+}
 //OCULTA TODOS LOS DISPLAY
 function hiddenAll(){
   nav_public.style.display="none";  
