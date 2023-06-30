@@ -42,6 +42,7 @@ let noticias_view = document.getElementById("noticias-View");
 //BOTONES
 let btnIniciarSesion = document.getElementById("btn-sesion");
 let btnEndSesion = document.getElementById("btn-cerrarSesion");
+let btnHome= document.getElementById("btn-home");
 let btnMenu = document.getElementById("menu");
 let btn_verMas = document.querySelectorAll("btn-verMas");
 
@@ -53,7 +54,10 @@ let btn_verMas = document.querySelectorAll("btn-verMas");
 btnIniciarSesion.addEventListener('click', function (e) {
   hiddenAll();
   nav_inicioSesion.classList.remove("desaparecer");
+  btnHome.classList.remove("desaparecer");
+  container_secondary.classList.remove("desaparecer");
   container_secondary.classList.add("backgroundEscuelaImg");
+  
 
 
 })
@@ -61,11 +65,16 @@ btnEndSesion.addEventListener('click', function (e) {
   userActual= users_type[0];
   hiddenAll();
   nav_inicioSesion.classList.remove("desaparecer");
+  btnHome.classList.remove("desaparecer");
+  container_secondary.classList.remove("desaparecer");
   container_secondary.classList.add("backgroundEscuelaImg");
   
 
-}
-)
+})
+btnHome.addEventListener('click', function(e){
+  container_secondary.classList.remove("backgroundEscuelaImg");
+  main();
+})
 
 btnMenu.addEventListener('click', function (e) {
   container_main.classList.toggle("desaparecer");
@@ -163,6 +172,7 @@ function hiddenAll() {
 
   btnEndSesion.classList.add("desaparecer");
   btnIniciarSesion.classList.add("desaparecer");
+  btnHome.classList.add("desaparecer");
 }
 
 

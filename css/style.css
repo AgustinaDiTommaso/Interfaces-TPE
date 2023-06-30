@@ -12,14 +12,14 @@ body {
 }
 
 .container-main {
-    
+    width: 30%;
     color: white;
     background-color: rgb(5, 42, 86);
     background-size: cover;
 }
 
-#container-secondary.width60 {
-    width: 60%;
+.container-secondary, .width60 {
+    width: 70%;
 }
 .width100 {
     width: 100%;
@@ -157,6 +157,7 @@ button.botonVisual {
 }
 
 button#btn-sesion,
+button#btn-home,
 button#btn-cerrarSesion {
     position: absolute;
     bottom: 0;
