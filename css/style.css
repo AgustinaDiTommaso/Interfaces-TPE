@@ -12,7 +12,7 @@ body {
 }
 
 .container-main {
-    width: 40%;
+    
     color: white;
     background-color: rgb(5, 42, 86);
     background-size: cover;
@@ -60,8 +60,7 @@ div button#menu {
 
 
 
-nav.navegador,
-div.navegador {
+.navegador{
 
     background-color: rgb(5, 42, 86);
     color: white;
