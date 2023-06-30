@@ -38,6 +38,7 @@ let container_secondary = document.getElementById("container-secondary");
 
 let noticia = document.getElementById("noticia")
 let noticias_view = document.getElementById("noticias-View");
+let historia= document.getElementById("historia");
 
 //BOTONES
 let btnIniciarSesion = document.getElementById("btn-sesion");
@@ -46,10 +47,19 @@ let btnHome= document.getElementById("btn-home");
 let btnMenu = document.getElementById("menu");
 let btn_verMas = document.querySelectorAll("btn-verMas");
 
+let btn_historia= document.getElementById("btn-historia");
+
 
 //CONTROL DE VISTAS
 
 //- Eventos
+btn_historia.addEventListener("click", function(e){
+  hiddenAll();
+  historia.classList.remove("desaparecer");   
+  nav_public.classList.remove("desaparecer");   
+  btnIniciarSesion.classList.remove("desaparecer");
+  
+})
 
 btnIniciarSesion.addEventListener('click', function (e) {
   hiddenAll();
@@ -81,8 +91,8 @@ btnMenu.addEventListener('click', function (e) {
 
   btnMenu.classList.toggle("menu-oculto");
   btnMenu.classList.toggle("menu-desplegado");
-  container_secondary.classList.toggle("widht70");
-  container_secondary.classList.toggle("widht100");
+  container_secondary.classList.toggle("width70");
+  container_secondary.classList.toggle("width100");
 })
 
 function main() {
@@ -107,7 +117,6 @@ function controllerUsers() {
     btnEndSesion.classList.remove("desaparecer");
   } else {
     hiddenAll();
-    nav_public.classList.remove("desaparecer");
     nav_public.classList.remove("desaparecer");
     noticias_view.classList.remove("desaparecer");
     btnIniciarSesion.classList.remove("desaparecer");
@@ -169,6 +178,7 @@ function hiddenAll() {
   nav_admin.classList.add("desaparecer");
   nav_inicioSesion.classList.add("desaparecer");
   noticias_view.classList.add("desaparecer");
+  historia.classList.add("desaparecer"),
 
   btnEndSesion.classList.add("desaparecer");
   btnIniciarSesion.classList.add("desaparecer");

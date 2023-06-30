@@ -30,7 +30,7 @@
                 </div>
                 <ul id="option-menu" class="flexColumnCentrado">
                     <li>Home</li>
-                    <li>Historia</li>
+                    <li id="btn-historia">Historia</li>
                     <li>Orientaciones</li>
                     <li>Equipo Directivo</li>
                     <li>Contacto</li>
@@ -40,7 +40,7 @@
 
             <div class="navegador flexColumnCentrado" id="nav-user">
                 <div class="flexColumnCentrado">
-                    <div class="image-user">                        
+                    <div class="image-user">
                     </div>
                     <img class="iconos" src="images/cambio.png" alt="">
                     <h1 id="name-user"></h1>
@@ -83,9 +83,9 @@
                     <input type="password" class="input" name="password" id="password" required="" autocomplete="off">
 
                 </form>
-                <div class="flexColumnCentrado">
-                    <button id="recuPassword" class="subrayado">Olvidé mi contraseña</button>
-                    <button type="button" class="botonVisual" id="ingresar"
+                <div class="flexColumnCentrado ">
+                    <button id="recuPassword" class="subrayado espaciado">Olvidé mi contraseña</button>
+                    <button type="button" class="botonVisual espaciado" id="ingresar"
                         onclick="obtenerDatosForm()">INGRESAR</button>
                 </div>
 
@@ -94,6 +94,7 @@
             <button id="btn-sesion" class="subrayado">Iniciar sesión</button>
             <button id="btn-home" class="subrayado">Home</button>
             <button id="btn-cerrarSesion" class="iconos"></button>
+
         </nav>
 
 
@@ -105,52 +106,55 @@
 
 
 
-    <div class="container-secondary " id="container-secondary">
-        <img src="" alt="">
+    <div class="container-secondary width70 " id="container-secondary">
+
         <div id="noticias-View" class="noticiaI-View  margenleft margentop">
             <header>
-            <div class="busqueda">
-                <input type="text" id="filtro" onkeyup="" placeholder="Buscar">
-                <img class="lupa" src="images/lupa.png" alt="">
-            </div>
-        </header>
-            <div id="1" class="noticia flexRow" >
+                <div class="busqueda">
+                    <input type="text" id="filtro" onkeyup="" placeholder="Buscar">
+                    <img class="lupa" src="images/lupa.png" alt="">
+                </div>
+            </header>
+            <div id="1" class="noticia flexRow">
                 <div class="flexColumnMarginleft">
                     <h2 class="titulo-noticia">Día del Medio Ambiente</h2>
                     <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
                     <p id="texto-noticia">En el Día Mundial del Medio Ambiente con los estudiantes de 2º 2º,
-                    trabajamos y hablamos sobre el Reciclado y la reutilización de varios objetos. En este caso
-                    reciclaron los viejos CD y frascos de vidrio. </p>
+                        trabajamos y hablamos sobre el Reciclado y la reutilización de varios objetos. En este caso
+                        reciclaron los viejos CD y frascos de vidrio. </p>
                 </div>
                 <div>
                     <img class="imagen-noticia" src="images/noticiaMA.jpg" alt="">
                 </div>
-               
+
 
             </div>
 
-            <div id="2" class="noticia flexRow ">                
+            <div id="2" class="noticia flexRow ">
                 <div class="flexColumnMarginleft ">
                     <h2 class="titulo-noticia">Día del Bombero</h2>
                     <p id="fechaPublicacion">Fecha de publicación: 02/06/2023 - EES Nº 16</p>
                     <p id="texto-noticia"> Colocamos globos en las puertas y ventanas de nuestra escuela,
-                        para homenajear a nuestros Bomberos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aperiam quod 
+                        para homenajear a nuestros Bomberos. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Sit aperiam quod
                         tempore aliquid autem culpa maiores quo quidem explicabo dicta. Accusamus dolore perspiciatis
-                         ipsum aspernatur? Consequatur vitae a illum. Commodi?</p>
-                        </div>
-                        <div>
-                            <img class="imagen-noticia" src="images/NoticiaB.png" alt="">
-                           
-                        </div>
+                        ipsum aspernatur? Consequatur vitae a illum. Commodi?</p>
+                </div>
+                <div>
+                    <img class="imagen-noticia" src="images/NoticiaB.png" alt="">
+
+                </div>
             </div>
 
             <div id="3" class="noticia flexRow ">
                 <div class="flexColumnMarginleft ">
-                <h2 class="titulo-noticia">Proyecto Solidario</h2>
-                <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
-                <p id="texto-noticia"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, aspernatur fuga aut error 
-                    itaque magni saepe laborum possimus dolorem minus architecto asperiores tempora officia accusantium cupiditate. 
-                    Doloribus nobis porro distinctio?.</p>
+                    <h2 class="titulo-noticia">Proyecto Solidario</h2>
+                    <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
+                    <p id="texto-noticia"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, aspernatur
+                        fuga aut error
+                        itaque magni saepe laborum possimus dolorem minus architecto asperiores tempora officia
+                        accusantium cupiditate.
+                        Doloribus nobis porro distinctio?.</p>
                 </div>
                 <div>
                     <img class="imagen-noticia" src="images/noticiaPS.jpg" alt="">
@@ -158,9 +162,44 @@
             </div>
         </div>
 
-
+        <div id="historia" class="margenCentrado " >
+            <h2 class="titulo-noticia textoCentrado">Historia</h2>
+            <p id="texto-noticia">En el año 2011 nace la Escuela de Educación Secundaria
+                Nº 16 en respuesta a la necesidad de tener una institución educativa de ese
+                nivel para los estudiantes del barrio Jardín y alrededores.
+                A partir de 2013, presenta dos orientaciones para el ciclo superior
+                (ciencias sociales y arte modalidad música) y comienza la búsqueda de una
+                infraestructura propia. En este proceso, son determinantes las gestiones
+                encaradas por la entonces directora Alicia Rota y el diputado provincial César
+                Valicenti para la construcción de su actual emplazamiento, ubicado en el barrio Ceco II.
+                En 2014 se completa la orientación arte y música y se crea el 6º año para ambas
+                orientaciones. Sin embargo, en 2015 son reemplazadas por comunicación.
+                Finalizada la construcción del nuevo edificio, el día 6 de octubre de 2017 fue
+                inaugurado; y el 19 de noviembre del 2021 la escuela recibe el nombre “Teniente de
+                Navío Diego Manuel Wagner”.
+                El logo de la escuela cuenta con 5 estrellas en su diseño que representan los valores
+                de la institución.
+                Respeto.
+                Responsabilidad.
+                Solidaridad.
+                Igualdad.
+                Libertad. </p>
+                <div>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <img src="" alt="">
+                </div>
+        </div>
 
     </div>
+
+
+
     <script src="js/main.js"></script>
 </body>
 

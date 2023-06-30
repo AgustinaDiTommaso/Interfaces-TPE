@@ -3,7 +3,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0px;
-    padding: 0;
+    padding: 0px;
     font-family: 'Nunito';
     background: linear-gradient(to top left, rgb(5, 42, 86), rgb(99, 127, 161), rgb(213, 230, 252));
     display: flex;
@@ -17,8 +17,7 @@ body {
     background-color: rgb(5, 42, 86);
     background-size: cover;
 }
-
-.container-secondary, .width60 {
+.container-secondary, .width70 {
     width: 70%;
 }
 .width100 {
@@ -40,8 +39,6 @@ body {
 }
 
 div button#menu {
-
-
     margin: 5px;
     width: 30px;
     height: 30px;
@@ -120,14 +117,6 @@ button {
     border-bottom: 3px solid rgb(9, 85, 175);
 }
 
-
-.btn-verMas{
-    font-family: 'Nunito';
-    text-decoration: underline;
-    color: black;
-    border: none;
-    background: none;
-}
 button.subrayado {
     font-family: 'Nunito';
     text-decoration: underline;
@@ -169,6 +158,7 @@ button#btn-cerrarSesion {
     margin-top: 0.25rem;
     font-size: 0.875rem;
     line-height: 1.5rem;
+    margin-left: 1.25rem;
 }
 
 .input-group label {
@@ -191,8 +181,11 @@ button#btn-cerrarSesion {
     border-color: rgba(167, 139, 250);
 }
 
-
+.espaciado{    
+    margin: 5px;
+}
 .backgroundEscuelaImg {
+    height: 100vh;
     background: url("../images/escuela.jpeg");
     background-size: cover;
     opacity: .5;
@@ -204,6 +197,7 @@ button#btn-cerrarSesion {
 
 #btnFlotante {
     position: absolute;
+    z-index: 5;
 }
 
 .lupa,
@@ -265,4 +259,10 @@ button#btn-cerrarSesion {
 }
 .margentop{
     margin-top: 10%;
+}
+.margenCentrado{
+    margin: 15%;
+}
+.textoCentrado{
+    text-align: center;
 }
