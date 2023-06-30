@@ -24,27 +24,40 @@ let inputUser;
 let inputPassword;
 
 
-let btnEndSesion= document.getElementById("btn-cerrarSesion");
+
 
 // DISPLAY 
+let nav= document.getElementById("nav");
 let nav_public=document.getElementById("nav-public");
 let nav_user=document.getElementById("nav-user");
 let nav_admin=document.getElementById("nav-admin");
 let nav_inicioSesion=document.getElementById("nav-inicioSesion");
 
+let container_main= document.getElementById("container-main");
+let container_secondary= document.getElementById("container-secondary")
+
 //BOTONES
 let btnIniciarSesion= document.getElementById("btn-sesion");
+let btnEndSesion= document.getElementById("btn-cerrarSesion");
+let btnMenu= document.getElementById("menu");
 
 
 //CONTROL DE VISTAS
 
+//- Eventos
 
 btnIniciarSesion.addEventListener('click', function(e){
     hiddenAll();    
     nav_inicioSesion.style.display="initial";   
-    
+    container_secondary.classList.add("backgroundEscuelaImg");
     loginUsuario();
 
+})
+btnMenu.addEventListener('click', function(e){
+  container_main.classList.toggle("desaparecer");
+
+  btnMenu.classList.toggle("menu-oculto")  ;
+  btnMenu.classList.toggle("menu-desplegado");
 })
 
 
@@ -96,6 +109,8 @@ function loginUsuario(){
     });
     //Si encontró el usuario
     if(usuarioEncontrado!=null){
+      
+      container_secondary.classList.remove("backgroundEscuelaImg");
       console.log("encontre el usuario en el arreglo json"+ usuarioEncontrado.tipo)
       //Almacena el tipo de usuario en la variable global userActual
       switch(usuarioEncontrado.tipo){
@@ -120,6 +135,7 @@ function hiddenAll(){
   nav_user.style.display="none" ;
   nav_admin.style.display="none";
   nav_inicioSesion.style.display="none";
+  container_secondary
 
   btnEndSesion.style.display="none";
   btnIniciarSesion.style.display="none";

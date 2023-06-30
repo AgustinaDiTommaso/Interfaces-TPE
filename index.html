@@ -11,13 +11,15 @@
 </head>
 
 <body>
-    <div class="container-main flexColumnCentrado">
-        <div class="flexColumnMarginleft">
-            <button id="menu" type="button"></button>
-        </div>
+    <div class="flexColumnMarginleft" id="btnFlotante">
+        <button id="menu" class="menu-desplegado" type="button"></button>
+    </div>
+
+    <div class="container-main flexColumnCentrado" id="container-main">
+        
 
 
-        <nav class="navegador flexColumnCentrado">
+        <nav class="navegador flexColumnCentrado" id="nav">
 
             <div class="navegador flexColumnCentrado" id="nav-public">
                 <div class="flexColumnCentrado">
@@ -73,22 +75,22 @@
                 </div>
 
                 <form class="form input-group" id="formsesion">
-
-                    <input type="text" class="input" name="usuario" id="usuario" required="" autocomplete="off">
                     <label for="usuario" class="user-label">Usuario</label>
-
-                    <input type="password" class="input" name="password" id="password" required="" autocomplete="off">
+                    <input type="text" class="input" name="usuario" id="usuario" required="" autocomplete="off">
+                    
                     <label for="password" class="password-label">Contraseña</label>
+                    <input type="password" class="input" name="password" id="password" required="" autocomplete="off">
+                    
                 </form>
                 <div class="flexColumnCentrado">
                     <button id="recuPassword" class="subrayado">Olvidé mi contraseña</button>
-                    <button type="button" id="ingresar" onclick="obtenerDatosForm()">INGRESAR</button>
+                    <button type="button" class="botonVisual" id="ingresar" onclick="obtenerDatosForm()">INGRESAR</button>
                 </div>
 
             </div>
 
             <button id="btn-sesion" class="subrayado">Iniciar sesión</button>
-            <button id="btn-cerrarSesion"></button>
+            <button id="btn-cerrarSesion"class="iconos" ></button>
         </nav>
 
 
@@ -100,7 +102,7 @@
 
 
 
-    <div class="container-secondary">
+    <div class="container-secondary" id="container-secondary">
 
 
     </div>
