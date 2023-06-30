@@ -23,8 +23,6 @@ let userActual= users_type[0];
 let inputUser;
 let inputPassword;
 
-// LOOP PARA CONTROL DE USUARIO
-//let loopUser= setInterval(controllerUsers, 3000);
 
 let btnEndSesion= document.getElementById("btn-cerrarSesion");
 
@@ -34,10 +32,13 @@ let nav_user=document.getElementById("nav-user");
 let nav_admin=document.getElementById("nav-admin");
 let nav_inicioSesion=document.getElementById("nav-inicioSesion");
 
+//BOTONES
+let btnIniciarSesion= document.getElementById("btn-sesion");
+
 
 //CONTROL DE VISTAS
 
-let btnIniciarSesion= document.getElementById("btn-sesion");
+
 btnIniciarSesion.addEventListener('click', function(e){
     hiddenAll();    
     nav_inicioSesion.style.display="initial";   

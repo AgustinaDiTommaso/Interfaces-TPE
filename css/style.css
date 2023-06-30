@@ -4,14 +4,36 @@ body {
     margin: 0px;
     font-family: 'Nunito';
     background: linear-gradient(to top left, rgb(5, 42, 86), rgb(99, 127, 161), rgb(213, 230, 252));
-    ;
+    display: flex;
+    flex-direction: row;
+    
+}
+.container-main, .container-secondary{    
+    height: 100%;
+}
+.container-main{
+    width: 40%;
+    color: white;
+    background-color: rgb(5, 42, 86);
+}
+#container-secondary{
+    width: 60%;
 }
 
-#menu {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 1;
+.flexColumnCentrado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flexColumnMarginleft{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+div button#menu{
+    
     background: url('../images/flecha.png');
     background-size: cover;
     width: 30px;
@@ -19,16 +41,15 @@ body {
     border: none;
 }
 
-nav,
+
+
+nav#navegador,
 div#navegador {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
     background-color: rgb(5, 42, 86);
     color: white;
-    width: 370px;
-    height: 100vh;
-    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #nav-admin,
@@ -60,10 +81,7 @@ img.iconos{
     border-radius: 50%;
     border: 2px solid white;
 }
-#option-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#option-menu {    
     list-style: none;
     padding: 0;
     margin: 0;
@@ -93,7 +111,7 @@ button#ingresar {
     background-color: rgb(109, 165, 233);
 }
 
-nav button {
+button.subrayado {
     font-family: 'Nunito';
     text-decoration: underline;
     color: white;
