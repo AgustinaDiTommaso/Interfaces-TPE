@@ -210,9 +210,9 @@ button#btn-cerrarSesion {
     position: absolute;
     z-index: 5;
     top: 10px;
-    right: 10px;
+    right: 5%;
     display: flex;
-  align-items: center;
+    align-items: center;
 }
 .lupa {
     
