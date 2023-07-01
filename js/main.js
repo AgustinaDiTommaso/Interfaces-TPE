@@ -188,3 +188,20 @@ function hiddenAll() {
 
 
 
+//manejo del search
+document.addEventListener('keyup', e => {
+  if (e.target.matches('#buscador')) {
+    const searchTerm = e.target.value.toLowerCase();
+    document.querySelectorAll('.noticia').forEach(noticia => {
+      if (noticia.querySelector('.titulo-noticia').textContent.toLowerCase().includes(searchTerm)) {
+        console.log("Encontre alguna noticia"+noticia);
+        noticia.classList.remove("desaparecer");
+        noticia.classList.add("flexRow");
+      } else {
+        noticia.classList.add("desaparecer");
+        noticia.classList.remove("flexRow");
+      }
+    });
+  }
+});
+
