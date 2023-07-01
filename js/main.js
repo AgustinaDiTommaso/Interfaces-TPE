@@ -47,6 +47,8 @@ let orientacion = document.getElementById("orientacion");
 let equipo = document.getElementById("equipo");
 let contacto = document.getElementById("contacto");
 
+let noticiaVerMas1=document.getElementById("noticiaVerMas1");
+
 //BOTONES
 let btnIniciarSesion = document.getElementById("btn-sesion");
 let btnEndSesion = document.getElementById("btn-cerrarSesion");
@@ -59,6 +61,8 @@ let btn_contacto = document.getElementById("btn-contacto");
 let btn_historia = document.getElementById("btn-historia");
 let btn_orientacion = document.getElementById("btn-orientacion");
 let btn_equipo = document.getElementById("btn-equipo");
+
+let noticia1=document.getElementById("noticia1");
 
 
 //INPUT
@@ -146,7 +150,13 @@ btnMenu.addEventListener('click', function (e) {
   container_secondary.classList.toggle("width70");
   container_secondary.classList.toggle("width100");
 })
+noticia1.addEventListener('click', function(e){
+  hiddenAll();
+  noticiaVerMas1.classList.remove("desaparecer");
+  nav_public.classList.remove("desaparecer");
+  btnIniciarSesion.classList.remove("desaparecer");
 
+})
 /*
 // Agrega un event listener para el evento 'keydown'
 inputPassword.addEventListener('keydown', function(e) {
@@ -291,6 +301,8 @@ function hiddenAll() {
   orientacion.classList.add("desaparecer");
   equipo.classList.add("desaparecer");
   contacto.classList.add("desaparecer");
+  
+  noticiaVerMas1.classList.add("desaparecer");
 
   btnEndSesion.classList.add("desaparecer");
   btnIniciarSesion.classList.add("desaparecer");

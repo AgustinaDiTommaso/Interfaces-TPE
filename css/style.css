@@ -5,14 +5,12 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: 'Nunito';
-
     background: white;
-
     display: flex;
     flex-direction: row;    
     overflow-y: scroll;
-
 }
+
 .container-secondary{
     height: 100vh;
     overflow-y: scroll;
@@ -234,11 +232,12 @@ button#btn-cerrarSesion {
 
 input#buscador {
 
-    border: none;
+    border: 1px solid grey;
     border-radius: 10px;
-    width: 110px;
+    width: 150px;
     height: 25px;
-    
+    background-color: rgba(228, 225, 225, 0.863);
+    padding-left: 10%;
 
     margin-right: 5px;
 
@@ -273,16 +272,17 @@ input#buscador {
     width: 150px;
     height: 150px;
     border-radius: 5px;
-
     margin: 15px;
-
 }
 .caja-informacion{
-    background-color: rgba(109, 165, 233, 0.158);
+    background-color: rgba(109, 165, 233, 0.411);
     border-radius: 10px;    
-    margin: 2%;
+    margin: 1%;
     padding: 2%;
     float: left;
+}
+.caja-contacto{
+    width: 30%;
 }
 .text-info{
     font-size: 12px;
@@ -355,10 +355,23 @@ input#buscador {
 }
 
 
-@media screen and(max-width: 850px) {
-    body{
-        background: #FFC66B;
+@media screen and(max-width:768px) {
+   
+    
+    .container-main{  
+        max-width: 50%;
+        
     }
-    
-    
+
+    .caja-informacion, .caja-contacto{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .container-main {
+        max-width: 70%;
+    }
 }

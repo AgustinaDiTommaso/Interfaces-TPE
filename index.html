@@ -118,7 +118,7 @@
                 <input type="text" id="buscador" placeholder="Buscar">
                 <img class="lupa" src="images/lupa.png" alt="">
             </div>
-            <div class="noticia flexRow  marginrigth">
+            <div id="noticia1" class="noticia flexRow  marginrigth">
                 <div class="flexColumnMarginleft">
                     <h2 class="titulo-noticia">Día del Medio Ambiente</h2>
                     <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
@@ -133,7 +133,7 @@
 
             </div>
 
-            <div id="2" class="noticia flexRow marginrigth ">
+            <div id="noticia2" class="noticia flexRow marginrigth ">
                 <div class="flexColumnMarginleft ">
                     <h2 class="titulo-noticia">Día del Bombero</h2>
                     <p id="fechaPublicacion">Fecha de publicación: 02/06/2023 - EES Nº 16</p>
@@ -154,7 +154,7 @@
                     <h2 class="titulo-noticia">Proyecto Solidario</h2>
                     <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
 
-                    <p id="texto-noticia"> En el marco del Proyecto Solidario que están trabajando los alumnos de 4°1° 
+                    <p id="texto-noticia"> En el marco del Proyecto Solidario que están trabajando los alumnos de 4°1°
                         con el profesor Garay Hernan de la materia de Nticx.</p>
 
                 </div>
@@ -166,50 +166,61 @@
 
         <div id="historia" class="margenCentrado ">
             <h2 class="titulo-noticia textoCentrado">Historia</h2>
-            <p id="texto-noticia">En el año 2011 nace la Escuela de Educación Secundaria
-                Nº 16 en respuesta a la necesidad de tener una institución educativa de ese
-                nivel para los estudiantes del barrio Jardín y alrededores.
-                A partir de 2013, presenta dos orientaciones para el ciclo superior
-                (ciencias sociales y arte modalidad música) y comienza la búsqueda de una
-                infraestructura propia. En este proceso, son determinantes las gestiones
-                encaradas por la entonces directora Alicia Rota y el diputado provincial César
-                Valicenti para la construcción de su actual emplazamiento, ubicado en el barrio Ceco II.
-                En 2014 se completa la orientación arte y música y se crea el 6º año para ambas
-                orientaciones. Sin embargo, en 2015 son reemplazadas por comunicación.
-                Finalizada la construcción del nuevo edificio, el día 6 de octubre de 2017 fue
-                inaugurado; y el 19 de noviembre del 2021 la escuela recibe el nombre “Teniente de
-                Navío Diego Manuel Wagner”.
-                El logo de la escuela cuenta con 5 estrellas en su diseño que representan los valores
-                de la institución. </p>
-            <div>
-                <ul>
-                    <li>Respeto.</li>
-                    <li>Responsabilidad.</li>
-                    <li>Solidaridad.</li>
-                    <li>Igualdad.</li>
-                    <li>Libertad.</li>
-                </ul>
-                <img class="imagen-contenido" src="images/historia.jpg" alt="">
-                <img class="imagen-contenido" src="images/historia2.jpg" alt="">
-
-            </div>
-
+                <div class="caja-informacion">
+                    <div class="flexRow">
+                        <p id="texto-noticia">En el año 2011 nace la Escuela de Educación Secundaria
+                            Nº 16 en respuesta a la necesidad de tener una institución educativa de ese
+                            nivel para los estudiantes del barrio Jardín y alrededores.
+                        </p>
+                        <img class="imagen-noticia" src="images/ara.jpg" alt="">
+                    </div>
+                    <div class="flexRow">
+                         <img class="imagen-noticia" src="images/historia2.jpg" alt="">
+                            <p id="texto-noticia"> A partir de 2013, presenta dos orientaciones para el ciclo superio
+                                (ciencias sociales y arte modalidad música) y comienza la búsqueda de una
+                                infraestructura propia. En este proceso, son determinantes las gestiones
+                                encaradas por la entonces directora Alicia Rota y el diputado provincial César
+                             Valicenti para la construcción de su actual emplazamiento, ubicado en el barrio Ceco II.
+                            </p>
+                    </div>
+                    <div>
+                        <p id="texto-noticia">
+                            En 2014 se completa la orientación arte y música y se crea el 6º año para ambas
+                            orientaciones. Sin embargo, en 2015 son reemplazadas por comunicación.
+                            Finalizada la construcción del nuevo edificio, el día 6 de octubre de 2017 fue
+                            inaugurado; y el 19 de noviembre del 2021 la escuela recibe el nombre “Teniente de
+                            Navío Diego Manuel Wagner”.
+                            El logo de la escuela cuenta con 5 estrellas en su diseño que representan los valores
+                            de la institución.
+                        </p>
+                        <div>
+                            <ul>
+                                <li>Respeto.</li>
+                                <li>Responsabilidad.</li>
+                                <li>Solidaridad.</li>
+                                <li>Igualdad.</li>
+                                <li>Libertad.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
         </div>
-        <div id="orientacion" class="margenCentrado">
+
+       <div id="orientacion" class="margenCentrado ">
             <h2 class="titulo-noticia textoCentrado">Orientaciones</h2>
-            <p id="texto-noticia"> En la actualidad la escuela cuenta con dos orientaciones:
-                Comunicación y CienciasSociales</p>
-            <p >Cada una cuenta con su color identificatorio.</p>
-            <div>
-                <img class="imagen-contenido" src="images/logoCOM.png" alt="">
-                <img class="imagen-contenido" src="images/logoCSSOC.png" alt="">
-            </div>
+            <div class="caja-informacion flexRow">
+                <p id="texto-noticia"> En la actualidad la escuela cuenta con dos orientaciones:
+                 Comunicación y CienciasSociales.
+                 Cada una cuenta con su color identificatorio.
+                </p>
+                    <img class="imagen-contenido" src="images/logoCOM.png" alt="">
+                    <img class="imagen-contenido" src="images/logoCSSOC.png" alt="">
+            </div>  
         </div>
+
         <div id="equipo" class="margenCentrado">
             <h2 class="titulo-noticia textoCentrado">Equipo Directivo</h2>
-
             <div>
-
                 <div class="caja-informacion margentop">
                     <p>Director/a:</p>
 
@@ -224,8 +235,6 @@
 
                     <p> Marisa, Coronel</p>
                 </div>
-
-
             </div>
         </div>
 
@@ -234,17 +243,17 @@
 
             <div class="flexRow contenerdorInfo">
 
-                <div class="caja-informacion margentop flexColumnCentrado ">
+                <div class="caja-informacion caja-contacto flexColumnCentrado ">
                     <img class="logo-box" src="images/mail.png" alt="">
                     <p class="text-info">secundaria16olavarria@abc.gob.ar</p>
 
                 </div>
-                <div class="caja-informacion margentop flexColumnCentrado ">
+                <div class="caja-informacion caja-contacto flexColumnCentrado ">
                     <img class="logo-box" src="images/tel.png" alt="">
                     <p class="text-info">02284 44-4713</p>
 
                 </div>
-                <div class="caja-informacion margentop flexColumnCentrado ">
+                <div class="caja-informacion caja-contacto flexColumnCentrado ">
                     <img class="logo-box" src="images/punto.png" alt="">
                     <p class="text-info">Juan XXIII al 3900</p>
 
@@ -252,7 +261,17 @@
             </div>
         </div>
 
-
+        <div id="noticiaVerMas1" class="margenCentrado">
+            <h2 class="titulo-noticia textoCentrado">Día del Medio Ambiente</h2>
+            <p id="fechaPublicacion" class="textoCentrado">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
+            <p id="texto-noticia">En el Día Mundial del Medio Ambiente con los estudiantes de 2º 2º,
+                trabajamos y hablamos sobre el Reciclado y la reutilización de varios objetos. En este caso
+                reciclaron los viejos CD y frascos de vidrio. </p>
+            <img class= "imagen-noticia" src="images/noticiaMA.jpg" alt="">
+            <img class= "imagen-noticia" src="images/ma1.jpg" alt="">
+            <img class= "imagen-noticia" src="images/ma2.jpg" alt="">
+            <img class= "imagen-noticia" src="images/ma3.jpg" alt="">
+        </div>
 
 
     </div>
