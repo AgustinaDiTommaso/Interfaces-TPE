@@ -236,6 +236,13 @@ input#buscador {
 
 
 }
+.noticia{
+    padding: 3%;
+}
+.noticia:hover{
+    cursor: pointer;
+    background-color: rgba(109, 165, 233, 0.322);
+}
 
 .contenedor-noticia {
     top: 5%;
@@ -253,7 +260,7 @@ input#buscador {
     height: 150px;
     border-radius: 5px;
 
-    margin: 20px;
+    margin: 15px;
 
 }
 
