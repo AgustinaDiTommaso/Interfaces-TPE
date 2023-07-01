@@ -41,7 +41,7 @@ let noticias_view = document.getElementById("noticias-View");
 let historia= document.getElementById("historia");
 let orientacion= document.getElementById("orientacion");
 let equipo= document.getElementById("equipo");
-let contacto= document.getElementById("equipo");
+let contacto= document.getElementById("contacto");
 
 
 //BOTONES
@@ -51,16 +51,26 @@ let btnHome= document.getElementById("btn-home");
 let btnMenu = document.getElementById("menu");
 let btn_verMas = document.querySelectorAll("btn-verMas");
 
+let btn_contacto= document.getElementById("btn-contacto");
 let btn_historia= document.getElementById("btn-historia");
 let btn_orientacion= document.getElementById("btn-orientacion");
 let btn_equipo= document.getElementById("btn-equipo");
-let btn_contacto= document.getElementById("btn-contacto");
+
 
 
 
 //CONTROL DE VISTAS
 
 //- Eventos
+
+btn_contacto.addEventListener("click", function(e){
+  hiddenAll();
+  contacto.classList.remove("desaparecer");   
+  nav_public.classList.remove("desaparecer");   
+  btnIniciarSesion.classList.remove("desaparecer");
+  
+});
+
 btn_historia.addEventListener("click", function(e){
   hiddenAll();
   historia.classList.remove("desaparecer");   
@@ -85,13 +95,6 @@ btn_equipo.addEventListener("click", function(e){
   
 });
 
-btn_contacto.addEventListener("click", function(e){
-  hiddenAll();
-  contacto.classList.remove("desaparecer");   
-  nav_public.classList.remove("desaparecer");   
-  btnIniciarSesion.classList.remove("desaparecer");
-  
-});
 
 btnIniciarSesion.addEventListener('click', function (e) {
   hiddenAll();
@@ -215,6 +218,7 @@ function hiddenAll() {
   orientacion.classList.add("desaparecer");
   equipo.classList.add("desaparecer");
   contacto.classList.add("desaparecer");
+
 
 
 
