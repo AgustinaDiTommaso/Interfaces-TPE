@@ -36,6 +36,9 @@ let nav_inicioSesion = document.getElementById("nav-inicioSesion");
 let container_main = document.getElementById("container-main");
 let container_secondary = document.getElementById("container-secondary");
 
+let detalleLogo= document.getElementById("detalle-logo");
+let detalleNombreEscuela=document.getElementById("detalle-nombreEscuela");
+
 let noticia = document.getElementById("noticia")
 let noticias_view = document.getElementById("noticias-View");
 let historia = document.getElementById("historia");
@@ -95,6 +98,9 @@ btnMenu.addEventListener('click', function (e) {
 
   btnMenu.classList.toggle("menu-oculto");
   btnMenu.classList.toggle("menu-desplegado");
+
+  detalleNombreEscuela.classList.toggle("colorAzul");
+  
   container_secondary.classList.toggle("width70");
   container_secondary.classList.toggle("width100");
 })
@@ -127,6 +133,8 @@ function controllerUsers() {
   if (userActual == users_type[2]) {
     console.log("El usuario logueado es un admin");
     hiddenAll();
+    detalleLogo.classList.remove("desaparecer");
+    detalleLogo.classList.add("flexRow");
     nav_admin.classList.remove("desaparecer");
     noticias_view.classList.remove("desaparecer");
     btnEndSesion.classList.remove("desaparecer");
@@ -134,9 +142,12 @@ function controllerUsers() {
   else if (userActual == users_type[1]) {
     console.log("El usuario logueado es un usuario común");
     hiddenAll();
+    detalleLogo.classList.remove("desaparecer");
+    detalleLogo.classList.add("flexRow");
     nav_user.classList.remove("desaparecer");
     noticias_view.classList.remove("desaparecer");
     btnEndSesion.classList.remove("desaparecer");
+
   } else {
     hiddenAll();
     nav_public.classList.remove("desaparecer");
@@ -236,9 +247,11 @@ function hiddenAll() {
   nav_admin.classList.add("desaparecer");
   nav_inicioSesion.classList.add("desaparecer");
   noticias_view.classList.add("desaparecer");
-  historia.classList.add("desaparecer"),
+  detalleLogo.classList.add("desaparecer");
+  
+  historia.classList.add("desaparecer");
 
-    btnEndSesion.classList.add("desaparecer");
+  btnEndSesion.classList.add("desaparecer");
   btnIniciarSesion.classList.add("desaparecer");
   btnHome.classList.add("desaparecer");
 }

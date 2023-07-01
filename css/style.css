@@ -42,7 +42,7 @@ body {
     
 }
 
-div button#menu {
+div button#menu{
     margin: 5px;
     width: 30px;
     height: 30px;
@@ -62,7 +62,7 @@ div button#menu {
 
 
 .navegador{
-
+    margin-top: 10%;
     background-color: rgb(5, 42, 86);
     color: white;
     width: 100%;
@@ -256,8 +256,8 @@ input#buscador {
 
 }
 
-#fechaPublicacion {
-    color: rgb(5, 42, 86);
+#fechaPublicacion, .colorAzul {
+    color: rgb(5, 42, 86) !important;
 }
 
 .flexRow{
@@ -280,4 +280,16 @@ input#buscador {
 }
 #recuPassword{
     color: #FFC66B;
+
+}
+#detalle-logo img.logos{
+    margin: 5px;
+    width: 70px;
+    height: 50px;
+    border: none;
+}
+#detalle-logo{
+    color: white;
+    font-family: "Nunito Sans";
+    font-weight: bold;
 }
