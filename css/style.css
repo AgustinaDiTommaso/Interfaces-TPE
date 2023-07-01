@@ -1,7 +1,9 @@
+
 body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0px;
+    padding: 0px;
     font-family: 'Nunito';
     background: linear-gradient(to top left, rgb(5, 42, 86), rgb(99, 127, 161), rgb(213, 230, 252));
     display: flex;
@@ -9,19 +11,17 @@ body {
 
 }
 
-.container-main,
-.container-secondary {
-    height: 100%;
-}
-
 .container-main {
     width: 30%;
     color: white;
     background-color: rgb(5, 42, 86);
+    background-size: cover;
 }
-
-#container-secondary {
+.container-secondary, .width70 {
     width: 70%;
+}
+.width100 {
+    width: 100%;
 }
 
 .flexColumnCentrado {
@@ -35,29 +35,29 @@ body {
     flex-direction: column;
     align-items: start;
     width: 100%;
+    
 }
 
 div button#menu {
-
-    
     margin: 5px;
     width: 30px;
     height: 30px;
     border: none;
 }
-.menu-desplegado{
+
+.menu-desplegado {
     background: url('../images/menuB.png');
     background-size: cover;
 }
-.menu-oculto{
+
+.menu-oculto {
     background: url('../images/menuA.png');
     background-size: cover;
 }
 
 
 
-nav#navegador,
-div#navegador {
+.navegador{
 
     background-color: rgb(5, 42, 86);
     color: white;
@@ -65,12 +65,7 @@ div#navegador {
     height: 100%;
 }
 
-#nav-admin,
-#nav-user,
-#nav-inicioSesion {
 
-    display: none;
-}
 
 h1 {
     font-family: 'Nunito Sans';
@@ -103,7 +98,6 @@ img.iconos {
     list-style: none;
     padding: 0;
     margin: 0;
-   
 
 }
 
@@ -111,7 +105,6 @@ img.iconos {
     width: auto;
     padding-top: 15px;
     margin: 0;
-    
 
 }
 
@@ -120,13 +113,11 @@ button {
     cursor: pointer;
 }
 
-#option-menu li:hover {
+#option-menu li:hover, .noticia  {
     border-bottom: 3px solid rgb(9, 85, 175);
 }
 
-
-
-button.subrayado, #btn-verMas {
+button.subrayado {
     font-family: 'Nunito';
     text-decoration: underline;
     color: white;
@@ -135,6 +126,7 @@ button.subrayado, #btn-verMas {
 
 
 }
+
 
 button.botonVisual {
     width: 80%;
@@ -146,7 +138,6 @@ button.botonVisual {
 }
 
 #btn-cerrarSesion {
-    display: none;
     background: url('../images/cerrar-sesion.png');
     background-size: cover;
     width: 30px;
@@ -155,6 +146,7 @@ button.botonVisual {
 }
 
 button#btn-sesion,
+button#btn-home,
 button#btn-cerrarSesion {
     position: absolute;
     bottom: 0;
@@ -166,6 +158,7 @@ button#btn-cerrarSesion {
     margin-top: 0.25rem;
     font-size: 0.875rem;
     line-height: 1.5rem;
+    margin-left: 1.25rem;
 }
 
 .input-group label {
@@ -188,21 +181,27 @@ button#btn-cerrarSesion {
     border-color: rgba(167, 139, 250);
 }
 
-
+.espaciado{    
+    margin: 5px;
+}
 .backgroundEscuelaImg {
+    height: 100vh;
     background: url("../images/escuela.jpeg");
     background-size: cover;
     opacity: .5;
 }
-.desaparecer{
+
+.desaparecer {
     display: none;
 }
-#btnFlotante{
-    position:absolute;
+
+#btnFlotante {
+    position: absolute;
+    z-index: 5;
 }
 
-
-.lupa, #filtro{
+.lupa,
+#filtro {
     width: 25px;
     height: 25px;
     position: fixed;
@@ -212,38 +211,69 @@ button#btn-cerrarSesion {
     margin-right: 5px;
 }
 
-#filtro{
+#filtro {
     border-radius: 5px;
     width: 85px;
     height: 25px;
     margin-right: 35px;
 }
-.titulo-noticia{
-  color:  rgb(5, 42, 86);
-  margin-bottom: 1rem;
- 
+
+.titulo-noticia {
+    color: rgb(5, 42, 86);
+    margin-bottom: 1rem;
+
 
 }
-.contenedor-noticia{
+
+.contenedor-noticia {
     top: 5%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1erm;
     text-align: center;
     margin-top: 10px;
-  
+
 }
 
-.imagen-noticia{
-    width: 125px;
-    height: 125px;
+.imagen-noticia {
+    width: 150px;
+    height: 150px;
     border-radius: 5px;
-   
+    margin: 10px;
 }
 
-#fechaPublicacion{
-    color:  rgb(5, 42, 86);
+#fechaPublicacion {
+    color: rgb(5, 42, 86);
 }
-.detalle-noticia{
-    
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.margenleft{
+    margin-left: 15%;
+}
+.margentop{
+    margin-top: 10%;
+}
+.margenCentrado{
+    margin: 15%;
+}
+.textoCentrado{
+    text-align: center;
+}
+
+.imagen-contenido{
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.imagen-contenidoC{
+    width: 25px;
+    height: 25px;
+    float: left;
 }

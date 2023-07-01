@@ -10,19 +10,14 @@
     <title>ESS N°16</title>
 </head>
 
-<body>
+<body onload="main()">
     <div class="flexColumnMarginleft" id="btnFlotante">
         <button id="menu" class="menu-desplegado" type="button"></button>
     </div>
 
-    <header>
-        <div class="busqueda"> 
-            <input type="text" id="filtro" onkeyup="" placeholder="Buscar">
-            <img class="lupa" src="images/lupa.png" alt="">
-         </div>
-    </header>
-
     <div class="container-main flexColumnCentrado" id="container-main">
+
+
 
         <nav class="navegador flexColumnCentrado" id="nav">
 
@@ -35,7 +30,7 @@
                 </div>
                 <ul id="option-menu" class="flexColumnCentrado">
                     <li>Home</li>
-                    <li>Historia</li>
+                    <li id="btn-historia">Historia</li>
                     <li>Orientaciones</li>
                     <li>Equipo Directivo</li>
                     <li>Contacto</li>
@@ -43,9 +38,10 @@
 
             </div>
 
-            <div class="navegador" id="nav-user">
+            <div class="navegador flexColumnCentrado" id="nav-user">
                 <div class="flexColumnCentrado">
-                    <div class="image-user"></div>
+                    <div class="image-user">
+                    </div>
                     <img class="iconos" src="images/cambio.png" alt="">
                     <h1 id="name-user"></h1>
                     <h2 id="cargo-user"></h2>
@@ -57,7 +53,7 @@
                     <li>Crear noticia</li>
                 </ul>
             </div>
-            <div class="navegador" id="nav-admin">
+            <div class="navegador flexColumnCentrado" id="nav-admin">
                 <div class="flexColumnCentrado">
                     <div class="image-user"></div>
                     <img class="iconos" src="images/cambio.png" alt="">
@@ -82,63 +78,161 @@
                 <form class="form input-group" id="formsesion">
                     <label for="usuario" class="user-label">Usuario</label>
                     <input type="text" class="input" name="usuario" id="usuario" required="" autocomplete="off">
-                    
+
                     <label for="password" class="password-label">Contraseña</label>
                     <input type="password" class="input" name="password" id="password" required="" autocomplete="off">
-                    
+
                 </form>
-                <div class="flexColumnCentrado">
-                    <button id="recuPassword" class="subrayado">Olvidé mi contraseña</button>
-                    <button type="button" class="botonVisual" id="ingresar" onclick="obtenerDatosForm()">INGRESAR</button>
+                <div class="flexColumnCentrado ">
+                    <button id="recuPassword" class="subrayado espaciado">Olvidé mi contraseña</button>
+                    <button type="button" class="botonVisual espaciado" id="ingresar"
+                        onclick="obtenerDatosForm()">INGRESAR</button>
                 </div>
 
             </div>
 
             <button id="btn-sesion" class="subrayado">Iniciar sesión</button>
-            <button id="btn-cerrarSesion"class="iconos" ></button>
+            <button id="btn-home" class="subrayado">Home</button>
+            <button id="btn-cerrarSesion" class="iconos"></button>
+
         </nav>
 
-    </div>
 
-    <div class="contenedor-noticia">
-        <div class="noticia">
-            <img class="imagen-noticia"src="images/noticiaMA.jpg" alt="">
-            <div>
-                <h2 class="titulo-noticia">Día del Medio Ambiente</h2>
-                <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
-                <p id="texto-noticia"> En el Dia Mundial del Medio Ambiente con los estudiantes de 2do2da , 
-                trabajamos y hablamos sobre el Reciclado ...</p>
-                <button id="btn-verMas">Ver más</button>
-
-            </div>
-        </div>
-        <div class="noticia">
-            <img class="imagen-noticia"src="images/noticiaPS.jpg" alt="">
-            <div>
-                <h2 class="titulo-noticia">Proyecto Solidario</h2>
-                <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
-                <p id="texto-noticia"> En el marco del Proyecto Solidario que están trabajando los alumnos de 4°1° 
-                con el profesor Garay Hernan de ....</p>
-                 <button id="btn-verMas">Ver más</button>
-            </div>
-        </div>
-        <div class="noticia">
-            <img class="imagen-noticia"src="images/NoticiaB.png"alt="">
-            <div>
-                <h2 class="titulo-noticia">Día del Bombero</h2>
-                <p id="fechaPublicacion">Fecha de publicación: 02/06/2023 - EES Nº 16</p>
-                <p id="texto-noticia"> Colocamos globos en las puertas y ventanas de nuestra escuela, 
-                 para homenajear a nuestros Bomberos. Feliz día que ...</p>
-                <button id="btn-verMas">Ver más</button>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container-secondary" id="container-secondary">
 
 
     </div>
+
+
+
+
+
+    <div class="container-secondary width70 " id="container-secondary">
+
+        <div id="noticias-View" class="noticiaI-View  margenleft margentop">
+            <header>
+                <div class="busqueda">
+                    <input type="text" id="filtro" onkeyup="" placeholder="Buscar">
+                    <img class="lupa" src="images/lupa.png" alt="">
+                </div>
+            </header>
+            <div id="1" class="noticia flexRow">
+                <div class="flexColumnMarginleft">
+                    <h2 class="titulo-noticia">Día del Medio Ambiente</h2>
+                    <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
+                    <p id="texto-noticia">En el Día Mundial del Medio Ambiente con los estudiantes de 2º 2º,
+                        trabajamos y hablamos sobre el Reciclado y la reutilización de varios objetos. En este caso
+                        reciclaron los viejos CD y frascos de vidrio. </p>
+                </div>
+                <div>
+                    <img class="imagen-noticia" src="images/noticiaMA.jpg" alt="">
+                </div>
+
+
+            </div>
+
+            <div id="2" class="noticia flexRow ">
+                <div class="flexColumnMarginleft ">
+                    <h2 class="titulo-noticia">Día del Bombero</h2>
+                    <p id="fechaPublicacion">Fecha de publicación: 02/06/2023 - EES Nº 16</p>
+                    <p id="texto-noticia"> Colocamos globos en las puertas y ventanas de nuestra escuela,
+                        para homenajear a nuestros Bomberos. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Sit aperiam quod
+                        tempore aliquid autem culpa maiores quo quidem explicabo dicta. Accusamus dolore perspiciatis
+                        ipsum aspernatur? Consequatur vitae a illum. Commodi?</p>
+                </div>
+                <div>
+                    <img class="imagen-noticia" src="images/NoticiaB.png" alt="">
+
+                </div>
+            </div>
+
+            <div id="3" class="noticia flexRow ">
+                <div class="flexColumnMarginleft ">
+                    <h2 class="titulo-noticia">Proyecto Solidario</h2>
+                    <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
+                    <p id="texto-noticia"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, aspernatur
+                        fuga aut error
+                        itaque magni saepe laborum possimus dolorem minus architecto asperiores tempora officia
+                        accusantium cupiditate.
+                        Doloribus nobis porro distinctio?.</p>
+                </div>
+                <div>
+                    <img class="imagen-noticia" src="images/noticiaPS.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="historia" class="margenCentrado " >
+            <h2 class="titulo-noticia textoCentrado">Historia</h2>
+            <p id="texto-noticia">En el año 2011 nace la Escuela de Educación Secundaria
+                Nº 16 en respuesta a la necesidad de tener una institución educativa de ese
+                nivel para los estudiantes del barrio Jardín y alrededores.
+                A partir de 2013, presenta dos orientaciones para el ciclo superior
+                (ciencias sociales y arte modalidad música) y comienza la búsqueda de una
+                infraestructura propia. En este proceso, son determinantes las gestiones
+                encaradas por la entonces directora Alicia Rota y el diputado provincial César
+                Valicenti para la construcción de su actual emplazamiento, ubicado en el barrio Ceco II.
+                En 2014 se completa la orientación arte y música y se crea el 6º año para ambas
+                orientaciones. Sin embargo, en 2015 son reemplazadas por comunicación.
+                Finalizada la construcción del nuevo edificio, el día 6 de octubre de 2017 fue
+                inaugurado; y el 19 de noviembre del 2021 la escuela recibe el nombre “Teniente de
+                Navío Diego Manuel Wagner”.
+                El logo de la escuela cuenta con 5 estrellas en su diseño que representan los valores
+                de la institución.</p>
+                <div>
+                    <ul>
+                        <li>Respeto.</li>
+                        <li>Responsabilidad.</li>
+                        <li>Solidaridad.</li>
+                        <li>Igualdad.</li>
+                        <li>Libertad.</li>
+                    </ul>
+                    <img class="imagen-contenido" src="images/historia.jpg" alt="">
+                    <img class="imagen-contenido"src="images/historia2.jpg" alt="">
+
+                </div>
+        </div>
+
+        <div id="orientacion" class="margenCentrado ">
+            <h2 class="titulo-noticia textoCentrado">Orientaciones</h2>
+                <p id="texto-noticia"> En la actualidad la escuela cuenta con dos orientaciones:Comunicación y Ciencias Sociales
+                    Cada una cuenta con su color identificatorio. 
+                </p>
+            <div>
+                <img class="imagen-contenido" src="images/logoCOM.png" alt="">
+                <img class="imagen-contenido" src="images/logoCSSOC.png" alt="">
+            </div>
+        </div>
+
+        <div id="equipo" class="margenCentrado ">
+            <h2 class="titulo-noticia textoCentrado">Equipo</h2>
+                <p id="texto-noticia"> 
+                    <ul> 
+                        <li>Director/a: Raquel, Gasparini</li>
+                        <li> Secretaria/o: Marisa, Coronel</li>
+                    </ul> 
+                </p>
+        </div>
+
+        <div id="contacto" class="margenCentrado ">
+            <h2 class="titulo-noticia textoCentrado">Contacto</h2>
+                <p id="texto-noticia"> Email: secundaria16olavarria@abc.gob.ar
+                    <img class="imagen-contenidoC" src="images/mail.png" alt="">
+                </p>
+                <p id="texto-noticia">Teléfono: 02284 44-4713
+                    <img class="imagen-contenidoC" src="images/tel.png" alt="">
+                </p>
+                <p id="texto-noticia">Dirección: Juan XXIII al 3900
+                    <img class="imagen-contenidoC" src="images/punto.png" alt="">
+                </p>
+           
+        </div>
+        
+
+    </div>
+
+
+
     <script src="js/main.js"></script>
 </body>
 
