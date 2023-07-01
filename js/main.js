@@ -47,7 +47,7 @@ let orientacion = document.getElementById("orientacion");
 let equipo = document.getElementById("equipo");
 let contacto = document.getElementById("contacto");
 
-let noticiaVerMas1=document.getElementById("noticiaVerMas1");
+let noticiaVerMas1 = document.getElementById("noticiaVerMas1");
 
 //BOTONES
 let btnIniciarSesion = document.getElementById("btn-sesion");
@@ -62,7 +62,7 @@ let btn_historia = document.getElementById("btn-historia");
 let btn_orientacion = document.getElementById("btn-orientacion");
 let btn_equipo = document.getElementById("btn-equipo");
 
-let noticia1=document.getElementById("noticia1");
+let noticia1 = document.getElementById("noticia1");
 
 
 //INPUT
@@ -73,45 +73,6 @@ let inputUsuario = document.getElementById("usuario");
 //CONTROL DE VISTAS
 
 //- Eventos
-btn_noticias.addEventListener("click", function (e) {
-  hiddenAll();
-  noticias_view.classList.remove("desaparecer");
-  nav_public.classList.remove("desaparecer");
-  btnIniciarSesion.classList.remove("desaparecer");
-
-});
-btn_contacto.addEventListener("click", function (e) {
-  hiddenAll();
-  contacto.classList.remove("desaparecer");
-  nav_public.classList.remove("desaparecer");
-  btnIniciarSesion.classList.remove("desaparecer");
-
-});
-
-btn_historia.addEventListener("click", function (e) {
-  hiddenAll();
-  historia.classList.remove("desaparecer");
-  nav_public.classList.remove("desaparecer");
-  btnIniciarSesion.classList.remove("desaparecer");
-
-});
-
-btn_orientacion.addEventListener("click", function (e) {
-  hiddenAll();
-  orientacion.classList.remove("desaparecer");
-  nav_public.classList.remove("desaparecer");
-  btnIniciarSesion.classList.remove("desaparecer");
-
-});
-
-btn_equipo.addEventListener("click", function (e) {
-  hiddenAll();
-  equipo.classList.remove("desaparecer");
-  nav_public.classList.remove("desaparecer");
-  btnIniciarSesion.classList.remove("desaparecer");
-
-});
-
 
 btnIniciarSesion.addEventListener('click', function (e) {
   hiddenAll();
@@ -139,9 +100,21 @@ btnHome.addEventListener('click', function (e) {
   main();
 })
 
-btnMenu.addEventListener('click', function (e) {
+
+noticia1.addEventListener('click', function (e) {
+  hiddenAll();
+  noticiaVerMas1.classList.remove("desaparecer");
+  nav_public.classList.remove("desaparecer");
+  btnIniciarSesion.classList.remove("desaparecer");
+
+})
+
+btnMenu.addEventListener('click', ocultarmenu);
+
+function ocultarmenu() {
   container_main.classList.toggle("desaparecer");
 
+  
   btnMenu.classList.toggle("menu-oculto");
   btnMenu.classList.toggle("menu-desplegado");
 
@@ -149,30 +122,14 @@ btnMenu.addEventListener('click', function (e) {
 
   container_secondary.classList.toggle("width70");
   container_secondary.classList.toggle("width100");
-})
-noticia1.addEventListener('click', function(e){
-  hiddenAll();
-  noticiaVerMas1.classList.remove("desaparecer");
-  nav_public.classList.remove("desaparecer");
-  btnIniciarSesion.classList.remove("desaparecer");
 
-})
-/*
-// Agrega un event listener para el evento 'keydown'
-inputPassword.addEventListener('keydown', function(e) {
-  // Verifica si el elemento tiene la clase 'bordeRojo'
-  if (inputPassword.classList.contains('bordeRojo')) {
-    // Remueve la clase 'bordeRojo' del elemento
-    inputPassword.classList.remove('bordeRojo');
+  if(!container_main.classList.contains("desaparecer")){
+    
+    nav_public.classList.remove("desaparecer");
+
+
   }
-});
-inputUsuario.addEventListener('keydown', function(e) {
-  // Verifica si el elemento tiene la clase 'bordeRojo'
-  if (inputUsuario.classList.contains('bordeRojo')) {
-    // Remueve la clase 'bordeRojo' del elemento
-    inputUsuario.classList.remove('bordeRojo');
-  }
-});*/
+}
 
 
 function main() {
@@ -183,7 +140,7 @@ function main() {
 function controllerUsers() {
 
   if (userActual == users_type[2]) {
-    console.log("El usuario logueado es un admin");
+    
     hiddenAll();
     detalleLogo.classList.remove("desaparecer");
     detalleLogo.classList.add("flexRow");
@@ -192,7 +149,7 @@ function controllerUsers() {
     btnEndSesion.classList.remove("desaparecer");
   }
   else if (userActual == users_type[1]) {
-    console.log("El usuario logueado es un usuario común");
+    
     hiddenAll();
     detalleLogo.classList.remove("desaparecer");
     detalleLogo.classList.add("flexRow");
@@ -215,7 +172,7 @@ function obtenerDatosForm() {
 
   inputUserValue = form.elements["usuario"].value;
   inputPasswordValue = form.elements["password"].value;
-  console.log(inputUserValue + " : " + inputPasswordValue);
+  
   loginUsuario();
 }
 
@@ -259,12 +216,12 @@ function loginUsuario() {
       inputPassword.value = "";
       inputPassword.placeholder = "";
       inputUsuario.placeholder = "";
-      if(document.getElementById("avisoError")){
+      if (document.getElementById("avisoError")) {
         document.getElementById("avisoError").remove();
       }
 
 
-      console.log("encontre el usuario en el arreglo json" + usuarioEncontrado.tipo)
+      
       //Almacena el tipo de usuario en la variable global userActual
       switch (usuarioEncontrado.tipo) {
         case "user":
@@ -273,7 +230,7 @@ function loginUsuario() {
 
           break;
         case "admin":
-          console.log(userActual)
+          
           userActual = users_type[2];
           break;
       }
@@ -301,7 +258,7 @@ function hiddenAll() {
   orientacion.classList.add("desaparecer");
   equipo.classList.add("desaparecer");
   contacto.classList.add("desaparecer");
-  
+
   noticiaVerMas1.classList.add("desaparecer");
 
   btnEndSesion.classList.add("desaparecer");
@@ -318,7 +275,7 @@ document.addEventListener('keyup', e => {
     const searchTerm = e.target.value.toLowerCase();
     document.querySelectorAll('.noticia').forEach(noticia => {
       if (noticia.querySelector('.titulo-noticia').textContent.toLowerCase().includes(searchTerm)) {
-        console.log("Encontre alguna noticia" + noticia);
+        
         noticia.classList.remove("desaparecer");
         noticia.classList.add("flexRow");
       } else {
@@ -329,3 +286,160 @@ document.addEventListener('keyup', e => {
   }
 });
 
+let mediaQuery = window.matchMedia("(max-width: 650px)");
+mediaQuery.addEventListener('change', cambiodemediaquery);
+if (mediaQuery.matches) {
+
+
+  addeventosMediaQuery();
+}else{
+  
+  addeventosMediaQueryMAX();
+}
+
+
+function cambiodemediaquery() {
+  if (mediaQuery.matches) {
+
+    addeventosMediaQuery();
+
+    
+  } else {
+    removeEventosMediaQuery();
+    addeventosMediaQueryMAX();
+
+    
+
+  }
+}
+function removeEventosMediaQuery(){
+  btn_noticias.removeEventListener("click", function (e) {
+    hiddenAll();
+    ocultarmenu();     
+    
+    container_secondary.classList.remove("desaparecer");
+    noticias_view.classList.remove("desaparecer");
+
+  });
+  btn_contacto.removeEventListener("click", function (e) {
+    hiddenAll();
+    ocultarmenu();
+    
+    container_secondary.classList.remove("desaparecer");
+    contacto.classList.remove("desaparecer");
+
+  });
+
+  btn_historia.removeEventListener("click", function (e) {
+    hiddenAll();
+    ocultarmenu();
+    container_secondary.classList.remove("desaparecer");
+    historia.classList.remove("desaparecer");
+
+  });
+
+  btn_orientacion.removeEventListener("click", function (e) {
+    hiddenAll();
+    ocultarmenu();
+    container_secondary.classList.remove("desaparecer");
+    orientacion.classList.remove("desaparecer");
+
+  });
+
+  btn_equipo.removeEventListener("click", function (e) {
+    hiddenAll();
+    ocultarmenu();
+    container_secondary.classList.remove("desaparecer");
+    equipo.classList.remove("desaparecer");
+
+  });
+
+}
+function addeventosMediaQueryMAX(){
+  
+btn_noticias.addEventListener("click", function (e) {
+  hiddenAll();
+  noticias_view.classList.remove("desaparecer");
+  nav_public.classList.remove("desaparecer");
+  btnIniciarSesion.classList.remove("desaparecer");
+
+});
+btn_contacto.addEventListener("click", function (e) {
+  hiddenAll();
+  contacto.classList.remove("desaparecer");
+  nav_public.classList.remove("desaparecer");
+  btnIniciarSesion.classList.remove("desaparecer");
+
+});
+
+btn_historia.addEventListener("click", function (e) {
+  hiddenAll();
+  historia.classList.remove("desaparecer");
+  nav_public.classList.remove("desaparecer");
+  btnIniciarSesion.classList.remove("desaparecer");
+
+});
+
+btn_orientacion.addEventListener("click", function (e) {
+  hiddenAll();
+  orientacion.classList.remove("desaparecer");
+  nav_public.classList.remove("desaparecer");
+  btnIniciarSesion.classList.remove("desaparecer");
+
+});
+
+btn_equipo.addEventListener("click", function (e) {
+  hiddenAll();
+  equipo.classList.remove("desaparecer");
+  nav_public.classList.remove("desaparecer");
+  btnIniciarSesion.classList.remove("desaparecer");
+
+});
+
+}
+function addeventosMediaQuery(){
+  btn_noticias.addEventListener("click", function (e) {
+    hiddenAll();
+    ocultarmenu();     
+    
+    container_secondary.classList.remove("desaparecer");
+    noticias_view.classList.remove("desaparecer");
+
+  });
+  btn_contacto.addEventListener("click", function (e) {
+    hiddenAll();
+    ocultarmenu();
+    
+    container_secondary.classList.remove("desaparecer");
+    contacto.classList.remove("desaparecer");
+
+  });
+
+  btn_historia.addEventListener("click", function (e) {
+    hiddenAll();
+    ocultarmenu();
+    container_secondary.classList.remove("desaparecer");
+    historia.classList.remove("desaparecer");
+
+  });
+
+  btn_orientacion.addEventListener("click", function (e) {
+    hiddenAll();
+    ocultarmenu();
+    container_secondary.classList.remove("desaparecer");
+    orientacion.classList.remove("desaparecer");
+
+  });
+
+  btn_equipo.addEventListener("click", function (e) {
+    hiddenAll();
+    ocultarmenu();
+    container_secondary.classList.remove("desaparecer");
+    equipo.classList.remove("desaparecer");
+
+  });
+
+
+
+
+}
