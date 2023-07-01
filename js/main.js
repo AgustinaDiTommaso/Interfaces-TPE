@@ -20,8 +20,8 @@ let users = [
   }
 ];
 let userActual = users_type[0];
-let inputUser;
-let inputPassword;
+let inputUserValue;
+let inputPasswordValue;
 
 
 
@@ -38,27 +38,31 @@ let container_secondary = document.getElementById("container-secondary");
 
 let noticia = document.getElementById("noticia")
 let noticias_view = document.getElementById("noticias-View");
-let historia= document.getElementById("historia");
+let historia = document.getElementById("historia");
 
 //BOTONES
 let btnIniciarSesion = document.getElementById("btn-sesion");
 let btnEndSesion = document.getElementById("btn-cerrarSesion");
-let btnHome= document.getElementById("btn-home");
+let btnHome = document.getElementById("btn-home");
 let btnMenu = document.getElementById("menu");
 let btn_verMas = document.querySelectorAll("btn-verMas");
 
-let btn_historia= document.getElementById("btn-historia");
+let btn_historia = document.getElementById("btn-historia");
 
+//INPUT
+
+let inputPassword= document.getElementById("password");
+let inputUsuario= document.getElementById("usuario");
 
 //CONTROL DE VISTAS
 
 //- Eventos
-btn_historia.addEventListener("click", function(e){
+btn_historia.addEventListener("click", function (e) {
   hiddenAll();
-  historia.classList.remove("desaparecer");   
-  nav_public.classList.remove("desaparecer");   
+  historia.classList.remove("desaparecer");
+  nav_public.classList.remove("desaparecer");
   btnIniciarSesion.classList.remove("desaparecer");
-  
+
 })
 
 btnIniciarSesion.addEventListener('click', function (e) {
@@ -67,21 +71,21 @@ btnIniciarSesion.addEventListener('click', function (e) {
   btnHome.classList.remove("desaparecer");
   container_secondary.classList.remove("desaparecer");
   container_secondary.classList.add("backgroundEscuelaImg");
-  
+
 
 
 })
 btnEndSesion.addEventListener('click', function (e) {
-  userActual= users_type[0];
+  userActual = users_type[0];
   hiddenAll();
   nav_inicioSesion.classList.remove("desaparecer");
   btnHome.classList.remove("desaparecer");
   container_secondary.classList.remove("desaparecer");
   container_secondary.classList.add("backgroundEscuelaImg");
-  
+
 
 })
-btnHome.addEventListener('click', function(e){
+btnHome.addEventListener('click', function (e) {
   container_secondary.classList.remove("backgroundEscuelaImg");
   main();
 })
@@ -94,6 +98,24 @@ btnMenu.addEventListener('click', function (e) {
   container_secondary.classList.toggle("width70");
   container_secondary.classList.toggle("width100");
 })
+
+
+// Agrega un event listener para el evento 'keydown'
+inputPassword.addEventListener('keydown', function(e) {
+  // Verifica si el elemento tiene la clase 'bordeRojo'
+  if (inputPassword.classList.contains('bordeRojo')) {
+    // Remueve la clase 'bordeRojo' del elemento
+    inputPassword.classList.remove('bordeRojo');
+  }
+});
+inputUsuario.addEventListener('keydown', function(e) {
+  // Verifica si el elemento tiene la clase 'bordeRojo'
+  if (inputUsuario.classList.contains('bordeRojo')) {
+    // Remueve la clase 'bordeRojo' del elemento
+    inputUsuario.classList.remove('bordeRojo');
+  }
+});
+
 
 function main() {
   hiddenAll();
@@ -127,28 +149,61 @@ function controllerUsers() {
 //OBTIENE DATOS DEL FORM  PARA INICIAR SESION
 function obtenerDatosForm() {
   let form = document.getElementById("formsesion");
-  inputUser = form.elements["usuario"].value;
-  inputPassword = form.elements["password"].value;
-  console.log(inputUser + " : " + inputPassword);
+  inputUserValue = form.elements["usuario"].value;
+  inputPasswordValue = form.elements["password"].value;
+  console.log(inputUserValue + " : " + inputPasswordValue);
   loginUsuario();
 }
 
 //VERIFICA QUE EXISTA UN USUARIO CON ESE NOMBRE Y CONTRASEÑA, Y GUARDA EL TIPO DE USUARIO. (NO MUESTRA MSJ ERROR POR AHORA)
 function loginUsuario() {
   let usuarioEncontrado = null;
+  let error;
   //Si los datos del form no estan vacíos
-  if (inputUser != null && inputPassword != null) {
+  if (inputUserValue != null && inputPasswordValue != null) {
     console.log("estoy buscando el usuario en el arreglo json")
     //Busca si existe un usuario con ese nombre y contraseña, si lo encuentra retorna el tipo sino null
     usuarioEncontrado = users.find(function (user) {
-      if (user.usuario == inputUser && user.password == inputPassword) {
-        return user;
+      if (user.usuario == inputUserValue) {
+        if (user.password == inputPasswordValue) {
+          error=null;
+          return user;
+        }
+        else {
+          error = inputPasswordValue;
+          return null;
+        }
       } else {
+        error = inputUserValue;
         return null;
+
       }
     });
-    //Si encontró el usuario
-    if (usuarioEncontrado != null) {
+    
+    if (error == inputUserValue) {
+
+      //me traigo el input y le agrego borde rojo  y contenido incorrecto
+      console.log("Error de contraseña");
+      
+      inputUsuario.classList.add("bordeRojo");
+      inputUsuario.value="";
+      inputUsuario.placeholder= "incorrecto";
+
+    } else if (error == inputPasswordValue) {
+
+      console.log("Error de usuario");
+      
+      inputPassword.classList.add("bordeRojo");
+      inputPassword.value="";
+      inputPassword.placeholder= "incorrecto";
+
+    } else if (usuarioEncontrado != null && error==null) {//Si encontró el usuario
+      inputUsuario.value="";
+      inputPassword.value="";
+      inputUsuario.classList.remove("bordeRojo");
+      inputPassword.classList.remove("bordeRojo");
+      inputPassword.placeholder= "";
+      inputUsuario.placeholder= "";
 
 
       console.log("encontre el usuario en el arreglo json" + usuarioEncontrado.tipo)
@@ -167,8 +222,11 @@ function loginUsuario() {
       container_secondary.classList.remove("backgroundEscuelaImg");
       controllerUsers();
     }
+
+
   }
 }
+
 
 
 //OCULTA TODOS LOS DISPLAY
@@ -180,7 +238,7 @@ function hiddenAll() {
   noticias_view.classList.add("desaparecer");
   historia.classList.add("desaparecer"),
 
-  btnEndSesion.classList.add("desaparecer");
+    btnEndSesion.classList.add("desaparecer");
   btnIniciarSesion.classList.add("desaparecer");
   btnHome.classList.add("desaparecer");
 }
@@ -194,7 +252,7 @@ document.addEventListener('keyup', e => {
     const searchTerm = e.target.value.toLowerCase();
     document.querySelectorAll('.noticia').forEach(noticia => {
       if (noticia.querySelector('.titulo-noticia').textContent.toLowerCase().includes(searchTerm)) {
-        console.log("Encontre alguna noticia"+noticia);
+        console.log("Encontre alguna noticia" + noticia);
         noticia.classList.remove("desaparecer");
         noticia.classList.add("flexRow");
       } else {
