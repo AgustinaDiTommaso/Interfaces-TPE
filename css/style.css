@@ -77,10 +77,15 @@ h1 {
     text-align: center;
 }
 
-img.logos {
+img.logos, .imagen-personal {
     padding: 5px;
-    width: 283px;
-    height: 222px;
+    width: 253px;
+    height: 192px;
+
+}
+.logo-box{
+    width: 30px ;
+    height: auto;
 }
 
 img.iconos {
@@ -263,6 +268,18 @@ input#buscador {
     margin: 15px;
 
 }
+.caja-informacion{
+    background-color: rgba(109, 165, 233, 0.158);
+    border-radius: 10px;    
+    margin: 2%;
+    padding: 2%;
+}
+.text-info{
+    font-size: 12px;
+}
+.contenerdorInfo{
+    width: 100%;
+}
 
 #fechaPublicacion, .colorAzul {
     color: rgb(5, 42, 86) !important;
@@ -316,6 +333,7 @@ input#buscador {
     height: 25px;
     float: left;
 }
+
 #avisoError{
     background-color: rgba(255, 0, 64, 0.322);
     width: 90%;
