@@ -1,31 +1,41 @@
-
 body {
     width: 100%;
     height: 100vh;
     margin: 0px;
     padding: 0px;
     font-family: 'Nunito';
-    background: linear-gradient(to top left, rgb(5, 42, 86), rgb(99, 127, 161), rgb(213, 230, 252));
+
+    background: white;
+
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
     overflow-y: scroll;
 
 }
-.container-secondary{
+
+.container-secondary {
     height: 100vh;
     overflow-y: scroll;
 }
+
 .container-main {
     width: 30%;
     color: white;
     background-color: rgb(5, 42, 86);
     background-size: cover;
 }
-.container-secondary, .width70 {
+
+.container-secondary,
+.width70 {
     width: 70%;
 }
+
 .width100 {
     width: 100%;
+}
+
+.width0 {
+    width: 0;
 }
 
 .flexColumnCentrado {
@@ -39,7 +49,7 @@ body {
     flex-direction: column;
     align-items: start;
     width: 100%;
-    
+
 }
 
 div button#menu {
@@ -61,7 +71,7 @@ div button#menu {
 
 
 
-.navegador{
+.navegador {
 
     background-color: rgb(5, 42, 86);
     color: white;
@@ -75,13 +85,23 @@ h1 {
     font-family: 'Nunito Sans';
     font-weight: bold;
     text-align: center;
+
 }
 
-img.logos {
+img.logos,
+.imagen-personal {
     padding: 5px;
-    width: 283px;
-    height: 222px;
+    width: 253px;
+    height: 192px;
+
 }
+
+.logo-box {
+    width: 30px;
+    height: auto;
+}
+
+
 
 img.iconos {
     padding: 5px;
@@ -96,6 +116,7 @@ img.iconos {
     background-size: cover;
     border-radius: 50%;
     border: 2px solid white;
+    margin-top: 45px;
 }
 
 #option-menu {
@@ -115,11 +136,14 @@ img.iconos {
 #option-menu li,
 button {
     cursor: pointer;
+
 }
 
-#option-menu li:hover, .noticia  {
+#option-menu li:hover,
+.noticia {
     border-bottom: 3px solid rgb(9, 85, 175);
 }
+
 
 button.subrayado {
     font-family: 'Nunito';
@@ -153,6 +177,7 @@ button#btn-sesion,
 button#btn-home,
 button#btn-cerrarSesion {
     position: absolute;
+    z-index: 2;
     bottom: 0;
 }
 
@@ -181,13 +206,18 @@ button#btn-cerrarSesion {
     color: black;
 }
 
+.bordeRojo {
+    border: 1px solid red !important;
+}
+
 .input-group input:focus {
     border-color: rgba(167, 139, 250);
 }
 
-.espaciado{    
+.espaciado {
     margin: 5px;
 }
+
 .backgroundEscuelaImg {
     height: 100vh;
     background: url("../images/escuela.jpeg");
@@ -204,26 +234,31 @@ button#btn-cerrarSesion {
     z-index: 5;
 }
 
+.busqueda {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 5%;
+    display: flex;
+    align-items: center;
+}
+
 .lupa {
+
     width: 25px;
     height: 25px;
-    position: fixed;
-    top: 3%;
-    right: 0;
-    transform: translateY(-50%);
-    margin-right: 5px;
 }
 
 input#buscador {
-    position:absolute;
-    z-index: 5;
-    top: 0;
-    right: 0;
-    border-radius: 5px;
-    width: 85px;
-    height: 25px;
-    margin-right: 35px;
 
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 150px;
+    height: 25px;
+    background-color: rgba(228, 225, 225, 0.863);
+    padding-left: 10%;
+
+    margin-right: 5px;
 
 }
 
@@ -232,6 +267,19 @@ input#buscador {
     margin-bottom: 1rem;
 
 
+}
+
+.noticia {
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.noticia:hover {
+    cursor: pointer;
+    background-color: rgba(109, 165, 233, 0.322);
 }
 
 .contenedor-noticia {
@@ -244,34 +292,165 @@ input#buscador {
 
 }
 
+
 .imagen-noticia {
     width: 150px;
     height: 150px;
     border-radius: 5px;
 
-    margin: 10px;
+    margin: 15px;
 
 }
 
-#fechaPublicacion {
-    color: rgb(5, 42, 86);
+.caja-informacion {
+    background-color: rgba(109, 165, 233, 0.411);
+    border-radius: 10px;
+    margin: 1%;
+    padding: 2%;
+    float: left;
 }
 
-.flexRow{
+.caja-contacto {
+    width: 40%;
+}
+
+.caja-contacto .text-info {
+    word-wrap: break-word;
+    font-size: 60%;
+}
+
+.contenedorInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+#fechaPublicacion,
+.colorAzul {
+    color: rgb(5, 42, 86) !important;
+}
+
+.flexRow {
     display: flex;
     flex-direction: row;
     align-items: center;
 
 }
-.margenleft{
+
+.margenleft {
     margin-left: 15%;
 }
-.margentop{
+
+.margentop {
     margin-top: 10%;
 }
-.margenCentrado{
-    margin: 15%;
+
+.marginrigth {
+    margin-right: 5%;
 }
-.textoCentrado{
+
+.margenCentrado {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top:5%;
+}
+
+.textoCentrado {
     text-align: center;
+}
+
+#recuPassword {
+    color: #FFC66B;
+
+}
+
+#detalle-logo img.logos {
+    margin: 5px;
+    width: 70px;
+    height: 50px;
+    border: none;
+}
+
+#detalle-logo {
+    color: white;
+    font-family: "Nunito Sans";
+    font-weight: bold;
+}
+
+.imagen-contenido {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.imagen-contenidoC {
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+
+#avisoError {
+    background-color: rgba(255, 0, 64, 0.322);
+    width: 90%;
+    font-size: 10px;
+    border-radius: 10px;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.userdocente{
+    font-size: small;
+}
+
+
+@media screen and (max-width: 650px) {
+
+    .contenedorInfo {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .caja-contacto {
+        width: 80%;
+    }
+
+    img.logos {
+        padding: 5px;
+        width: 153px;
+        height: 92px;
+    }
+
+    .container-main {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+    }
+
+    .noticias-view {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .imagen-noticia {
+        width: 50%;
+        border-radius: 5px;
+        margin: 10px;
+
+    }
+
+    .noticia {
+        display: flex;
+        flex-direction: column;
+    }
+
 }

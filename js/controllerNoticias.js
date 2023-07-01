@@ -18,4 +18,5 @@ let noticias = [
         "materia": "",
         "tipo": "admin"
       }
+
   ];
