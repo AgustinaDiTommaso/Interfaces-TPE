@@ -62,7 +62,7 @@ div button#menu{
 
 
 .navegador{
-    margin-top: 10%;
+    
     background-color: rgb(5, 42, 86);
     color: white;
     width: 100%;
@@ -247,12 +247,13 @@ input#buscador {
 
 }
 
+
 .imagen-noticia {
     width: 150px;
     height: 150px;
     border-radius: 5px;
 
-    margin: 10px;
+    margin: 20px;
 
 }
 
@@ -271,6 +272,9 @@ input#buscador {
 }
 .margentop{
     margin-top: 10%;
+}
+.marginrigth{
+    margin-right: 5%;
 }
 .margenCentrado{
     margin: 15%;
@@ -292,4 +296,16 @@ input#buscador {
     color: white;
     font-family: "Nunito Sans";
     font-weight: bold;
+}
+.imagen-contenido{
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.imagen-contenidoC{
+    width: 25px;
+    height: 25px;
+    float: left;
 }

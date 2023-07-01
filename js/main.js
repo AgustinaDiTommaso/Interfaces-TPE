@@ -42,6 +42,9 @@ let detalleNombreEscuela=document.getElementById("detalle-nombreEscuela");
 let noticia = document.getElementById("noticia")
 let noticias_view = document.getElementById("noticias-View");
 let historia = document.getElementById("historia");
+let orientacion= document.getElementById("orientacion");
+let equipo= document.getElementById("equipo");
+let contacto= document.getElementById("contacto");
 
 //BOTONES
 let btnIniciarSesion = document.getElementById("btn-sesion");
@@ -50,7 +53,12 @@ let btnHome = document.getElementById("btn-home");
 let btnMenu = document.getElementById("menu");
 let btn_verMas = document.querySelectorAll("btn-verMas");
 
-let btn_historia = document.getElementById("btn-historia");
+let btn_noticias = document.getElementById("btn-noticias");
+let btn_contacto= document.getElementById("btn-contacto");
+let btn_historia= document.getElementById("btn-historia");
+let btn_orientacion= document.getElementById("btn-orientacion");
+let btn_equipo= document.getElementById("btn-equipo");
+
 
 //INPUT
 
@@ -60,13 +68,45 @@ let inputUsuario= document.getElementById("usuario");
 //CONTROL DE VISTAS
 
 //- Eventos
-btn_historia.addEventListener("click", function (e) {
+btn_noticias.addEventListener("click", function(e){
   hiddenAll();
-  historia.classList.remove("desaparecer");
-  nav_public.classList.remove("desaparecer");
+  noticias_view.classList.remove("desaparecer");  
+  nav_public.classList.remove("desaparecer");   
   btnIniciarSesion.classList.remove("desaparecer");
+  
+});
+btn_contacto.addEventListener("click", function(e){
+  hiddenAll();
+  contacto.classList.remove("desaparecer");   
+  nav_public.classList.remove("desaparecer");   
+  btnIniciarSesion.classList.remove("desaparecer");
+  
+});
 
-})
+btn_historia.addEventListener("click", function(e){
+  hiddenAll();
+  historia.classList.remove("desaparecer");   
+  nav_public.classList.remove("desaparecer");   
+  btnIniciarSesion.classList.remove("desaparecer");
+  
+});
+
+btn_orientacion.addEventListener("click", function(e){
+  hiddenAll();
+  orientacion.classList.remove("desaparecer");   
+  nav_public.classList.remove("desaparecer");   
+  btnIniciarSesion.classList.remove("desaparecer");
+  
+}); 
+
+btn_equipo.addEventListener("click", function(e){
+  hiddenAll();
+  equipo.classList.remove("desaparecer");   
+  nav_public.classList.remove("desaparecer");   
+  btnIniciarSesion.classList.remove("desaparecer");
+  
+});
+
 
 btnIniciarSesion.addEventListener('click', function (e) {
   hiddenAll();
@@ -169,7 +209,7 @@ function obtenerDatosForm() {
 //VERIFICA QUE EXISTA UN USUARIO CON ESE NOMBRE Y CONTRASEÑA, Y GUARDA EL TIPO DE USUARIO. (NO MUESTRA MSJ ERROR POR AHORA)
 function loginUsuario() {
   let usuarioEncontrado = null;
-  let error;
+  let error=null;
   //Si los datos del form no estan vacíos
   if (inputUserValue != null && inputPasswordValue != null) {
     console.log("estoy buscando el usuario en el arreglo json")
@@ -181,6 +221,7 @@ function loginUsuario() {
           return user;
         }
         else {
+          
           error = inputPasswordValue;
           return null;
         }
@@ -190,11 +231,11 @@ function loginUsuario() {
 
       }
     });
-    
+    console.log(error);
     if (error == inputUserValue) {
 
       //me traigo el input y le agrego borde rojo  y contenido incorrecto
-      console.log("Error de contraseña");
+      console.log("Error de usuario");
       
       inputUsuario.classList.add("bordeRojo");
       inputUsuario.value="";
@@ -202,7 +243,7 @@ function loginUsuario() {
 
     } else if (error == inputPasswordValue) {
 
-      console.log("Error de usuario");
+      console.log("Error de contraseña");
       
       inputPassword.classList.add("bordeRojo");
       inputPassword.value="";
@@ -248,8 +289,12 @@ function hiddenAll() {
   nav_inicioSesion.classList.add("desaparecer");
   noticias_view.classList.add("desaparecer");
   detalleLogo.classList.add("desaparecer");
+
   
   historia.classList.add("desaparecer");
+  orientacion.classList.add("desaparecer");
+  equipo.classList.add("desaparecer");
+  contacto.classList.add("desaparecer");
 
   btnEndSesion.classList.add("desaparecer");
   btnIniciarSesion.classList.add("desaparecer");

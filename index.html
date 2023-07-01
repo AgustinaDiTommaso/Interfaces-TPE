@@ -13,7 +13,7 @@
 <body onload="main()">
     <div class="flexRow" id="btnFlotante">
         <button id="menu" class="menu-desplegado" type="button"></button>
-        <div  id="detalle-logo">
+        <div id="detalle-logo">
             <img class="logos" src="images/logoEscuela.png" alt="">
             <p id="detalle-nombreEscuela">EES N°16</p>
 
@@ -24,7 +24,7 @@
 
 
 
-        <nav class="navegador flexColumnCentrado" id="nav">
+        <nav class="navegador flexColumnCentrado margentop" id="nav">
 
             <div class="navegador flexColumnCentrado" id="nav-public">
                 <div class="flexColumnCentrado">
@@ -34,11 +34,11 @@
 
                 </div>
                 <ul id="option-menu" class="flexColumnCentrado">
-                    <li>Home</li>
+                    <li id="btn-noticias">Home</li>
                     <li id="btn-historia">Historia</li>
-                    <li>Orientaciones</li>
-                    <li>Equipo Directivo</li>
-                    <li>Contacto</li>
+                    <li id="btn-orientacion">Orientaciones</li>
+                    <li id="btn-equipo">Equipo Directivo</li>
+                    <li id="btn-contacto">Contacto</li>
                 </ul>
 
             </div>
@@ -114,11 +114,11 @@
     <div class="container-secondary width70 " id="container-secondary">
 
         <div id="noticias-View" class="noticiaI-View  margenleft margentop">
-                <div class="busqueda">
-                    <input type="text" id="buscador"  placeholder="Buscar">
-                    <img class="lupa" src="images/lupa.png" alt="">
-                </div>
-            <div id="1" class="noticia flexRow">
+            <div class="busqueda">
+                <input type="text" id="buscador" placeholder="Buscar">
+                <img class="lupa" src="images/lupa.png" alt="">
+            </div>
+            <div id="1" class="noticia flexRow  marginrigth">
                 <div class="flexColumnMarginleft">
                     <h2 class="titulo-noticia">Día del Medio Ambiente</h2>
                     <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
@@ -126,14 +126,14 @@
                         trabajamos y hablamos sobre el Reciclado y la reutilización de varios objetos. En este caso
                         reciclaron los viejos CD y frascos de vidrio. </p>
                 </div>
-                <div>
+                
                     <img class="imagen-noticia" src="images/noticiaMA.jpg" alt="">
-                </div>
+                
 
 
             </div>
 
-            <div id="2" class="noticia flexRow ">
+            <div id="2" class="noticia flexRow marginrigth ">
                 <div class="flexColumnMarginleft ">
                     <h2 class="titulo-noticia">Día del Bombero</h2>
                     <p id="fechaPublicacion">Fecha de publicación: 02/06/2023 - EES Nº 16</p>
@@ -143,13 +143,13 @@
                         tempore aliquid autem culpa maiores quo quidem explicabo dicta. Accusamus dolore perspiciatis
                         ipsum aspernatur? Consequatur vitae a illum. Commodi?</p>
                 </div>
-                <div>
+                
                     <img class="imagen-noticia" src="images/NoticiaB.png" alt="">
 
-                </div>
+                
             </div>
 
-            <div id="3" class="noticia flexRow ">
+            <div id="3" class="noticia flexRow marginrigth ">
                 <div class="flexColumnMarginleft ">
                     <h2 class="titulo-noticia">Proyecto Solidario</h2>
                     <p id="fechaPublicacion">Fecha de publicación: 05/06/2023 - Claudia Leonardi</p>
@@ -165,7 +165,7 @@
             </div>
         </div>
 
-        <div id="historia" class="margenCentrado " >
+        <div id="historia" class="margenCentrado ">
             <h2 class="titulo-noticia textoCentrado">Historia</h2>
             <p id="texto-noticia">En el año 2011 nace la Escuela de Educación Secundaria
                 Nº 16 en respuesta a la necesidad de tener una institución educativa de ese
@@ -181,23 +181,63 @@
                 inaugurado; y el 19 de noviembre del 2021 la escuela recibe el nombre “Teniente de
                 Navío Diego Manuel Wagner”.
                 El logo de la escuela cuenta con 5 estrellas en su diseño que representan los valores
-                de la institución.
-                Respeto.
-                Responsabilidad.
-                Solidaridad.
-                Igualdad.
-                Libertad. </p>
-                <div>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <img src="" alt="">
-                </div>
+                de la institución. </p>
+            <div>
+                <ul>
+                    <li>Respeto.</li>
+                    <li>Responsabilidad.</li>
+                    <li>Solidaridad.</li>
+                    <li>Igualdad.</li>
+                    <li>Libertad.</li>
+                </ul>
+                <img class="imagen-contenido" src="images/historia.jpg" alt="">
+                <img class="imagen-contenido" src="images/historia2.jpg" alt="">
+
+            </div>
+            
         </div>
+        <div id="orientacion" class="margenCentrado">
+            <h2 class="titulo-noticia textoCentrado">Orientaciones</h2>
+            <p id="texto-noticia"> En la actualidad la escuela cuenta con dos orientaciones:Comunicación y Ciencias
+                Sociales
+                Cada una cuenta con su color identificatorio.
+            </p>
+            <div>
+                <img class="imagen-contenido" src="images/logoCOM.png" alt="">
+                <img class="imagen-contenido" src="images/logoCSSOC.png" alt="">
+            </div>
+        </div>
+        <div id="equipo" class="margenCentrado">
+            <h2 class="titulo-noticia textoCentrado">Equipo Directivo</h2>
+            <p id="texto-noticia">
+            <ul>
+                <li>Director/a: Raquel, Gasparini</li>
+                <li> Secretaria/o: Marisa, Coronel</li>
+            </ul>
+            </p>
+        </div>
+
+        <div id="contacto" class="margenCentrado">
+            <h2 class="titulo-noticia textoCentrado">Contacto</h2>
+            <p id="texto-noticia"> 
+                <img class="iconos" src="images/mail.png" alt="">
+                Email: secundaria16olavarria@abc.gob.ar
+                
+            </p>
+            <p id="texto-noticia">
+                <img class="iconos" src="images/tel.png" alt="">
+                Teléfono: 02284 44-4713
+                
+            </p>
+            <p id="texto-noticia">
+                <img class="iconos" src="images/punto.png" alt="">
+                Dirección: Juan XXIII al 3900
+               
+            </p>
+        </div>
+
+
+
 
     </div>
 
